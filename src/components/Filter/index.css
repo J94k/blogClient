@@ -1,0 +1,12 @@
+.filter-container {
+  padding: 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--brand-color);
+  box-shadow: 0 0 0.1em var(--shadow-color);
+  background-color: var(--bg-color-1);
+}
+
+.filter-container.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

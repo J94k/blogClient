@@ -1,0 +1,7 @@
+node_modules
+dist
+*-lock.yaml
+*lock.json
+logo_*.svg
+favicon.ico
+.env

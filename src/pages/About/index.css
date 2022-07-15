@@ -1,0 +1,25 @@
+.about-container {
+  margin: 1rem 0;
+  border-radius: 0.9rem;
+  box-shadow: 0 0 0.3rem var(--shadow-color);
+  background-color: var(--bg-color-1);
+  transition: 0.2s;
+}
+
+.about__content {
+  padding: 1rem;
+}
+
+.about__title {
+  margin: 0 0 1rem;
+}
+
+.about__description {
+  margin: 1.4rem 0 0;
+}
+
+.about__social-links-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+}
