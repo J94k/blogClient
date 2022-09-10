@@ -8,7 +8,7 @@ import { BiLogoInstagramAlt } from 'solid-icons/bi'
 import { AiFillYoutube } from 'solid-icons/ai'
 import { BiLogoFacebook } from 'solid-icons/bi'
 import { AiTwotoneMail } from 'solid-icons/ai'
-import { NAME, DESCRIPTION, SOCIAL_LINKS } from '../../constants'
+import { NAME, DESCRIPTION, SOCIAL_LINKS } from '../../shared/constants'
 
 const socialLink = (source: string) => {
   const SIZE = 30

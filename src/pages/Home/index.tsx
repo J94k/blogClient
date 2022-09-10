@@ -1,6 +1,6 @@
 import { For } from 'solid-js'
-import Filter from '../../components/Filter'
-import PostDetails from '../../components/PostDetails'
+import Filter from '../../shared/components/Filter'
+import PostDetails from '../../shared/components/PostDetails'
 
 export default function Home(props) {
   return (

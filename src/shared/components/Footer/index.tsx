@@ -1,10 +1,9 @@
-import { NAME, SOCIAL_LINKS } from '../../constants'
+import { NAME } from '../../../shared/constants'
 import './index.css'
 
+const currentYear = new Date().getFullYear()
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
   return (
     <footer class="footer">
       <span class="footer__copyright">

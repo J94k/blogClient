@@ -1,4 +1,4 @@
-import { name, description, socialLinks, server } from '../config.json'
+import { name, description, socialLinks, server } from '../../config.json'
 
 export const SERVER_URL = server || ''
 export const NAME: string = name || ''

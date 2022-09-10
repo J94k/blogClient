@@ -1,8 +1,8 @@
 import { createResource } from 'solid-js'
 import { useParams } from 'solid-app-router'
 import './index.css'
-import { fetchPost } from '../../utils/posts'
-import Loader from '../../components/Loader'
+import { fetchPost } from '../../shared/utils/posts'
+import Loader from '../../shared/components/Loader'
 
 export default function Post() {
   const { author, date } = useParams()
