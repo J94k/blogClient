@@ -8,15 +8,7 @@ const style = {
   [Log.warning]: 'color: yellow;  background-color: brown;',
 }
 
-export const log = ({
-  value,
-  title,
-  type,
-}: {
-  value: any
-  title: string
-  type?: Log
-}) => {
+export const log = ({ value, title, type }: { value: any; title: string; type?: Log }) => {
   console.group(`%c ${title}`, style[type || ''] || 'color: gray;')
 
   if (type === Log.error) {
@@ -30,3 +22,6 @@ export const log = ({
   console.groupEnd()
 }
 
+export const parseDate = (date: string) => {
+  return Date.parse(date)
+}

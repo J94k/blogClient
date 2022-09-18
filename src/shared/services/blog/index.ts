@@ -1,38 +1,14 @@
 import { SERVER_URL } from '../../constants'
+import { parseDate } from '../../utils'
 
-interface Post {
-  author: string
-  content: string
-  date: string
-  description: string
-  title: string
-}
-
-const collectPosts = (data: {
-  [name: string]: {
-    [date: string]: {
-      author: string
-      date: string
-      post: Post
-    }
-  }
-}): Post[] => {
-  const allPosts = []
-
-  Object.values(data).forEach((dateObj) =>
-    Object.values(dateObj).forEach(({ post }) => allPosts.push(post))
-  )
-
-  return allPosts
+const collectPosts = (data: Blog.Posts): Blog.Posts => {
+  return data
 }
 
 export enum FilterType {
   fromPresentToPast,
   fromPastToPresent,
   date,
-  author,
-  // @todo tags
-  // @todo date range
 }
 
 type DateRange = {
@@ -47,18 +23,16 @@ export interface Filter {
   value?: string | Tags | DateRange
 }
 
-export const filterPosts = (posts: Post[], filter: Filter): Post[] => {
+export const filterPosts = (posts: Blog.Posts, filter: Filter): Blog.Posts => {
   if (filter.type === FilterType.fromPresentToPast) {
-    return posts.sort((p1, p2) => Number(p2.date) - Number(p1.date))
+    return posts.sort((p1, p2) => {
+      return parseDate(p1.attributes.date) - parseDate(p2.attributes.date)
+    })
   }
 
   if (filter.type === FilterType.fromPastToPresent) {
-    return posts.sort((p1, p2) => Number(p1.date) - Number(p2.date))
-  }
-
-  if (filter.type === FilterType.author) {
-    return posts.filter(({ author }) => {
-      author === filter.value
+    return posts.sort((p1, p2) => {
+      return parseDate(p2.attributes.date) - parseDate(p1.attributes.date)
     })
   }
 
@@ -67,9 +41,9 @@ export const filterPosts = (posts: Post[], filter: Filter): Post[] => {
 
 export const fetchPosts = async (filter: Filter) => {
   try {
-    const response = await fetch(`${SERVER_URL}/posts/all`).then((response) =>
-      response.json()
-    )
+    const response: { data: Blog.Posts; meta: unknown } = await fetch(
+      `${SERVER_URL}/api/posts`
+    ).then((res) => res.json())
 
     return filterPosts(collectPosts(response.data), filter)
   } catch (error) {
@@ -78,18 +52,11 @@ export const fetchPosts = async (filter: Filter) => {
   }
 }
 
-export const fetchPost = async (
-  author: string,
-  date: string
-): Promise<Post | null> => {
+export const fetchPost = async (id: number): Promise<Blog.Post | null> => {
   try {
-    const response = await fetch(`${SERVER_URL}/posts/${author}/${date}`).then(
-      (res) => res.json()
-    )
+    const response = await fetch(`${SERVER_URL}/api/posts/${id}`).then((res) => res.json())
 
-    if (response?.msg === 'Not found') return null
-
-    return response?.data?.post || null
+    return response?.data || null
   } catch (error) {
     console.error(error)
     return null

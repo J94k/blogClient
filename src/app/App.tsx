@@ -25,7 +25,7 @@ export default function App() {
       <main class="main">
         <Routes>
           <Route path="/" component={() => <Home posts={posts()} />} />
-          <Route path="/post/:author/:date" component={Post} />
+          <Route path="/posts/:id" component={Post} />
           <Route path="/about" component={About} />
         </Routes>
       </main>
