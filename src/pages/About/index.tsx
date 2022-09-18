@@ -8,7 +8,7 @@ import { BiLogoInstagramAlt } from 'solid-icons/bi'
 import { AiFillYoutube } from 'solid-icons/ai'
 import { BiLogoFacebook } from 'solid-icons/bi'
 import { AiTwotoneMail } from 'solid-icons/ai'
-import { NAME, DESCRIPTION, SOCIAL_LINKS } from '../../constants'
+import { DESCRIPTION, SOCIAL_LINKS } from '../../shared/constants'
 
 const socialLink = (source: string) => {
   const SIZE = 30
@@ -29,7 +29,6 @@ export default function About() {
   return (
     <section class="about-container">
       <div class="about__content">
-        {NAME && <h2 class="about__title">{NAME}</h2>}
         {DESCRIPTION && <p class="about__description">{DESCRIPTION}</p>}
       </div>
 

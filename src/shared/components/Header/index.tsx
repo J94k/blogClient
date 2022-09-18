@@ -1,10 +1,13 @@
 import { createSignal } from 'solid-js'
-import { NAME } from '../../constants'
 import { NavLink } from 'solid-app-router'
-import { LOGO } from '../../assets'
+import { useI18n } from '@solid-primitives/i18n'
 import { FaSolidSun } from 'solid-icons/fa'
 import { BsMoonStarsFill } from 'solid-icons/bs'
+import { NAME } from '../../../shared/constants'
+import { LOGO } from '../../assets'
 import './index.css'
+import LangSwitch from './LangSwitch'
+import Navigation from './Navigation'
 
 enum Theme {
   dark = 'dark',
@@ -12,6 +15,8 @@ enum Theme {
 }
 
 export default function Header() {
+  const [t, { add, locale, dict }] = useI18n()
+
   const [theme, setTheme] = createSignal(
     document.body.dataset?.scheme === 'dark' ? Theme.dark : Theme.light
   )
@@ -41,27 +46,20 @@ export default function Header() {
             {NAME}
           </div>
         </NavLink>
-        <button class="theme-button" onClick={changeTheme}>
-          {theme() === Theme.dark ? (
-            <FaSolidSun color="var(--text-color)" size={24} />
-          ) : (
-            <BsMoonStarsFill color="var(--text-color)" size={24} />
-          )}
-        </button>
+
+        <div class="header__actions-wrapper">
+          <LangSwitch />
+          <button class="theme-button" onClick={changeTheme}>
+            {theme() === Theme.dark ? (
+              <FaSolidSun color="var(--text-color)" size={24} />
+            ) : (
+              <BsMoonStarsFill color="var(--text-color)" size={24} />
+            )}
+          </button>
+        </div>
       </div>
 
-      <div class="header__navigation-container">
-        <nav class="navigation">
-          <ul class="navigation__list">
-            <li class="navigation__item">
-              <NavLink href="/">Home</NavLink>
-            </li>
-            <li class="navigation__item">
-              <NavLink href="/about">About</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Navigation />
     </header>
   )
 }
