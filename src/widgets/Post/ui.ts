@@ -1,0 +1,34 @@
+import styled from 'styled-components'
+
+export const StyledPost = styled.article``
+
+export const StyledTitle = styled.h2``
+
+export const StyledDescription = styled.blockquote`
+  position: relative;
+  margin: 0;
+  padding: 0.6rem 0.9rem 0.6rem 1.4rem;
+  border-radius: 0.5rem;
+  background-color: var(--rc-color-background-1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 100%;
+    background-color: var(--rc-color-border-3);
+    border-radius: 1rem;
+  }
+`
+
+export const StyledContent = styled.p``
+
+export const StyledFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.9rem;
+`

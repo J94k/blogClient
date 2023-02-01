@@ -6,3 +6,5 @@ logo_*.svg
 favicon.ico
 .env
 config.json
+
+.env*

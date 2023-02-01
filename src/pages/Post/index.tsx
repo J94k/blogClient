@@ -1,25 +1,26 @@
-import { createResource } from 'solid-js'
-import { useParams } from 'solid-app-router'
-import './index.css'
-import { fetchPost } from '../../shared/services/blog'
-import Loader from '../../shared/components/Loader'
+import { FC } from 'react'
+import { useParams } from 'react-router-dom'
+import { observer } from 'mobx-react-lite'
+import store from 'app/store'
+import PostWidget from 'widgets/Post'
+import NotFound from 'shared/components/NotFound'
+import { StyledWrapper } from './ui'
 
-export default function Post() {
-  const { id } = useParams()
-  const [post, { mutate: mutatePost, refetch: refetchPost }] = createResource(
-    () => fetchPost(Number(id) || -1)
-  )
+type Props = {
+  post: Post.View
+}
 
+const Post: FC<Props> = ({ post }) => {
   return (
-    <article class="post-container">
-      {post() ? (
-        <>
-          <h2 class="post__title">{post().attributes.title}</h2>
-          <p class="post__content">{post().attributes.content}</p>
-        </>
-      ) : (
-        <Loader />
-      )}
-    </article>
+    <StyledWrapper>
+      <PostWidget {...post} />
+    </StyledWrapper>
   )
 }
+
+export default observer(() => {
+  const { postId } = useParams()
+  const post = store.getPost(postId)
+
+  return !post ? <NotFound /> : <Post post={post} />
+})
