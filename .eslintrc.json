@@ -1,69 +1,25 @@
 {
   "env": {
     "browser": true,
-    "es2022": true
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json"
+    "es2021": true
   },
   "extends": [
-    "standard-with-typescript"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime"
   ],
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "rules": {
-    "@typescript-eslint/space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "always",
-        "named": "never",
-        "asyncArrow": "always"
-      }
-    ],
-    "semi": [
-      "error",
-      "never"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "no-constructor-return": [
-      "error",
-      "always"
-    ],
-    "no-use-before-define": [
-      "error",
-      {
-        "functions": true,
-        "classes": true,
-        "variables": true,
-        "allowNamedExports": false
-      }
-    ],
-    "no-duplicate-imports": [
-      "error",
-      {
-        "includeExports": true
-      }
-    ],
-    "no-await-in-loop": [
-      "error"
-    ]
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  "ignorePatterns": [
-    "src/**/*.test.ts",
-    "src/**/*.css",
-    "build/**/*"
-  ]
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"]
+  }
 }

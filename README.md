@@ -1,1 +1,1 @@
-# Blog - client
+# Blog: frontend

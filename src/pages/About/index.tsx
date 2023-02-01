@@ -1,56 +1,32 @@
-import { For } from 'solid-js'
-import './index.css'
-import { FaBrandsTelegramPlane } from 'solid-icons/fa'
-import { FaBrandsRedditAlien } from 'solid-icons/fa'
-import { BsDiscord } from 'solid-icons/bs'
-import { AiOutlineMedium } from 'solid-icons/ai'
-import { BiLogoInstagramAlt } from 'solid-icons/bi'
-import { AiFillYoutube } from 'solid-icons/ai'
-import { BiLogoFacebook } from 'solid-icons/bi'
-import { AiTwotoneMail } from 'solid-icons/ai'
-import { DESCRIPTION, SOCIAL_LINKS } from '../../shared/constants'
+import { ReactElement } from 'react'
+import config from 'config'
+import { LinkEmail } from 'shared/components/Link'
+import { StyledWrapper, StyledSocialBlock } from './ui'
 
-const socialLink = (source: string) => {
-  const SIZE = 30
-
-  if (source.match(/t\.me/)) return <FaBrandsTelegramPlane size={SIZE} />
-  if (source.match(/reddit/)) return <FaBrandsRedditAlien size={SIZE} />
-  if (source.match(/discord/)) return <BsDiscord size={SIZE} />
-  if (source.match(/medium/)) return <AiOutlineMedium size={SIZE} />
-  if (source.match(/instagram/)) return <BiLogoInstagramAlt size={SIZE} />
-  if (source.match(/youtube/)) return <AiFillYoutube size={SIZE} />
-  if (source.match(/facebook/)) return <BiLogoFacebook size={SIZE} />
-  if (source.match(/mail/)) return <AiTwotoneMail size={SIZE} />
-
-  return null
-}
-
-export default function About() {
+const About = (): ReactElement => {
   return (
-    <section class="about-container">
-      <div class="about__content">
-        {DESCRIPTION && <p class="about__description">{DESCRIPTION}</p>}
-      </div>
+    <StyledWrapper>
+      <h2>Что за место. Зачем?</h2>
+      <p>
+        Просто так. Хотя может и не просто. Вся эта тема помогает в развитии разговорных навыков,
+        умений контролировать мысли и фокусироваться. Поддержание и освоение технических навыков
+        требуемых для создания всего что ты видишь также присутствует. В конце концов
+        распространение &quot;полезной&quot; информации (все относительно, возможно эта инфа просто
+        мусор). Вроде написал достаточно много, чтобы раздел не выглядел сильно пустым.
+      </p>
+      <p>
+        Почему крысы? Потому что они крутые. Маленькие и хитрые. Не выделяются. Если этого не
+        достаточно, то можешь в поисковой строке написать <b>&quot;почему крысы&quot;</b> или
+        <b>&quot;why rats&quot;</b>.
+      </p>
+      <p>Но думаю это все равно никого не волнует 😶.</p>
 
-      {SOCIAL_LINKS.length && (
-        <div class="about__social-links-container">
-          <For each={SOCIAL_LINKS}>
-            {({ name, source }) => {
-              return (
-                <a
-                  class="footer__social-link"
-                  href={source}
-                  target="_blank"
-                  rel="noopener"
-                  title={name}
-                >
-                  {socialLink(source) || name}
-                </a>
-              )
-            }}
-          </For>
-        </div>
-      )}
-    </section>
+      <StyledSocialBlock>
+        Можешь связаться по почте:
+        <LinkEmail to={config.CONNECTION_EMAIL}>Rat email</LinkEmail>
+      </StyledSocialBlock>
+    </StyledWrapper>
   )
 }
+
+export default About

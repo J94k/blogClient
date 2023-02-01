@@ -1,10 +1,17 @@
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tsPaths from 'vite-tsconfig-paths'
+import mkcert from 'vite-plugin-mkcert'
 
 export default defineConfig({
-  plugins: [solidPlugin()],
-  build: {
-    target: 'esnext',
-    polyfillDynamicImport: false,
+  plugins: [
+    mkcert({
+      autoUpgrade: true,
+    }),
+    react(),
+    tsPaths(),
+  ],
+  server: {
+    https: true,
   },
-});
+})

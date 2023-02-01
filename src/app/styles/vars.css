@@ -1,0 +1,144 @@
+:root {
+  --rc-max-width-content: 60rem;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-light50: #f6f6f6;
+  --color-light100: #eaeaea;
+  --color-light200: #cfcfcf;
+  --color-dark0: #090b0e;
+  --color-dark50: #13171d;
+  --color-dark100: #0c0f13;
+  --color-dark200: #272a31;
+  --color-gray50: #f5f6fc;
+  --color-gray100: #e8ecfb;
+  --color-gray150: #d8dae1;
+  --color-gray200: #b8c0dc;
+  --color-gray250: #a6afca;
+  --color-gray300: #98a1c0;
+  --color-gray350: #888fab;
+  --color-gray400: #7780a0;
+  --color-gray450: #6b7594;
+  --color-gray500: #5d6785;
+  --color-gray550: #505a78;
+  --color-gray600: #404a67;
+  --color-gray650: #333d59;
+  --color-gray700: #293249;
+  --color-gray750: #1b1d23;
+  --color-gray800: #131a2a;
+  --color-gray850: #0e1524;
+  --color-gray900: #0d111c;
+  --color-gray950: #080b11;
+  --color-red50: #faecea;
+  --color-red100: #fed5cf;
+  --color-red200: #fea79b;
+  --color-red300: #fd766b;
+  --color-red400: #fa2b39;
+  --color-red500: #c4292f;
+  --color-red600: #891e20;
+  --color-red700: #530f0f;
+  --color-red800: #380a03;
+  --color-red900: #240800;
+  --color-yellow50: #f6f2d5;
+  --color-yellow100: #dbbc19;
+  --color-yellow200: #dbbc19;
+  --color-yellow300: #bb9f13;
+  --color-yellow400: #a08116;
+  --color-yellow500: #866311;
+  --color-yellow600: #5d4204;
+  --color-yellow700: #3e2b04;
+  --color-yellow800: #231902;
+  --color-yellow900: #180f02;
+  --color-green50: #e3f3e6;
+  --color-green100: #bfeeca;
+  --color-green200: #76d191;
+  --color-green300: #40b66b;
+  --color-green400: #209853;
+  --color-green400-transparent: #2098534e;
+  --color-green500: #0b783e;
+  --color-green600: #0c522a;
+  --color-green600-transparent: #0c522a4e;
+  --color-green700: #053117;
+  --color-green800: #091f10;
+  --color-green800-transparent: #091f1020;
+  --color-green900: #09130b;
+}
+
+body {
+  --rc-color-background-1: var(--color-light50);
+  --rc-color-background-2: var(--color-white);
+  --rc-color-text-1: var(--color-gray950);
+  --rc-color-text-2: var(--color-gray600);
+  --rc-color-text-3: var(--color-green700);
+  --rc-color-text-4: var(--color-gray600);
+  --rc-color-text-4-hover: var(--color-gray400);
+
+  --rc-color-shadow-1: var(--color-gray150);
+  --rc-color-border-1: var(--color-gray200);
+  --rc-color-border-2: var(--color-light100);
+  --rc-color-border-3: var(--color-light200);
+
+  --rc-color-link-1: var(--color-green600);
+  --rc-color-link-1-hover: var(--color-green400);
+
+  --rc-color-button-text-1: var(--color-green800);
+  --rc-color-button-text-1-hover: var(--color-green600);
+  --rc-color-button-text-2: #7acc97;
+  --rc-color-button-text-2-hover: #499f67;
+
+  --rc-color-button-background-1: var(--color-green800-transparent);
+  --rc-color-button-background-1-hover: var(--color-green600-transparent);
+  --rc-color-button-background-2: var(--color-green400);
+  --rc-color-button-background-2-hover: var(--color-green400-transparent);
+  --rc-color-button-background-3: #e0f3e4;
+  --rc-color-button-background-3-hover: #aad7b4;
+
+  --rc-gradient-background: radial-gradient(
+      100% 100% at 50% 0%,
+      rgba(186, 228, 210, 0.7) 0%,
+      rgba(252, 243, 249, 0.6536) 49.48%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--rc-color-background-1);
+}
+
+body[data-scheme='dark'] {
+  --rc-color-background-1: var(--color-gray950);
+  --rc-color-background-2: var(--color-dark50);
+
+  --rc-color-text-1: var(--color-white);
+  --rc-color-text-2: var(--color-gray600);
+  --rc-color-text-3: var(--color-green500);
+
+  --rc-color-text-4: var(--color-gray400);
+  --rc-color-text-4-hover: var(--color-gray200);
+
+  --rc-color-shadow-1: #0c0e12;
+  --rc-color-border-1: var(--color-gray200);
+  --rc-color-border-2: var(--color-dark100);
+  --rc-color-border-3: var(--color-dark200);
+
+  --rc-color-link-1: var(--color-green500);
+  --rc-color-link-1-hover: var(--color-green200);
+
+  --rc-color-button-text-1: var(--color-green500);
+  --rc-color-button-text-1-hover: var(--color-green300);
+  --rc-color-button-text-2: #2a7d48;
+  --rc-color-button-text-2-hover: #3da061;
+
+  --rc-color-button-background-1: var(--color-green600-transparent);
+  --rc-color-button-background-1-hover: var(--color-green400-transparent);
+  --rc-color-button-background-2: var(--color-green400);
+  --rc-color-button-background-2-hover: var(--color-green400-transparent);
+  --rc-color-button-background-3: #182d21;
+  --rc-color-button-background-3-hover: #2b4f3b;
+
+  --rc-gradient-background: radial-gradient(
+      100% 100% at 50% 0%,
+      rgba(20, 49, 37, 0.29) 0%,
+      rgba(12, 31, 23, 0.6536) 49.48%,
+      rgba(31, 33, 40, 0) 100%,
+      rgba(31, 33, 40, 0) 100%
+    ),
+    var(--rc-color-background-1);
+}
