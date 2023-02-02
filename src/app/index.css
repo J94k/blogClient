@@ -18,6 +18,10 @@
 
 html {
   scroll-behavior: smooth;
+  font-variant: none;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -25,13 +29,23 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: Old-Soviet;
-  font-size: 1.2rem;
   letter-spacing: 0.08rem;
   line-height: 1.8rem;
-  box-shadow: inset 0 0 0.5rem var(--rc-color-shadow-1);
   background-color: var(--rc-color-background-1);
-  background: var(--rc-gradient-background);
+  background: var(--rc-color-background-1);
   color: var(--rc-color-text-1);
+  scrollbar-width: thin;
+  scrollbar-color: var(--rc-color-border-3);
+}
+
+body::-webkit-scrollbar {
+  background: transparent;
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--rc-color-border-3);
+  border-radius: 8px;
 }
 
 input,

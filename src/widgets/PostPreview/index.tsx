@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { ButtonContinue } from 'shared/components/Button'
 import AuthorLabel from 'shared/components/AuthorLabel'
 import DateLabel from 'shared/components/DateLabel'
 import { msToLocalDate } from 'shared/utils/date'
@@ -7,6 +6,7 @@ import {
   StyledPostPreview,
   StyledTitle,
   StyledBottom,
+  StyledButtonContinue,
   StyledMetadata,
   StyledDescription,
 } from './ui'
@@ -26,7 +26,7 @@ const PostPreview: FC<
         {description.length > maxDescriptionLength ? '...' : null}
       </StyledDescription>
       <StyledBottom>
-        <ButtonContinue onClick={handleContinue}>Продолжить</ButtonContinue>
+        <StyledButtonContinue onClick={handleContinue}>Продолжить</StyledButtonContinue>
         <StyledMetadata>
           <AuthorLabel>{author}</AuthorLabel> <DateLabel>{msToLocalDate(date)}</DateLabel>
         </StyledMetadata>

@@ -24,5 +24,5 @@ export const StyledSnowFlake = styled.div<{
   opacity: ${({ opacity }) => opacity}%;
   animation: snowfall ${({ animationTime }) => animationTime}s linear infinite;
   animationdelay: -${({ animetionDelay }) => animetionDelay}s;
-  background-color: var(--rc-color-text-3);
+  background-color: var(--rc-color-text-1);
 `

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { VIEWPORT } from 'shared/ui/mixins/viewport'
+import { ButtonContinue } from 'shared/components/Button'
 
 export const StyledPostPreview = styled.section`
   padding: 1rem;
@@ -22,11 +23,11 @@ export const StyledDescription = styled.p`
   margin: 0;
   padding: 0.7rem 0;
   font-size: 1.1rem;
-  opacity: 0.8;
+  color: var(--rc-color-secondary);
 `
 
 export const StyledBottom = styled.div`
-  margin-top: 0.8rem;
+  margin-top: 8px;
   display: flex;
   align-items: center;
 
@@ -36,9 +37,12 @@ export const StyledBottom = styled.div`
   }
 `
 
+export const StyledButtonContinue = styled(ButtonContinue)`
+  margin-right: 14px;
+`
+
 export const StyledMetadata = styled.div`
-  font-size: 0.8em;
-  opacity: 0.8;
+  color: var(--rc-color-secondary);
 
   @media ${VIEWPORT.MOBILE} {
     margin-top: 1rem;

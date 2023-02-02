@@ -13,7 +13,7 @@ export const StyledToggle = styled.button`
   border-radius: 0.3rem;
   border: none;
   background-color: transparent;
-  transition: 0.12s;
+  transition: 0.1s;
 
   &:hover {
     background-color: var(--rc-color-background-2);
