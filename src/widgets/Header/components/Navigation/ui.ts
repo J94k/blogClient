@@ -19,9 +19,14 @@ export const StyledWrapper = styled.nav`
 `
 
 export const StyledRouteLink = styled.span`
-  font-size: 1.4rem;
+  font-size: 18px;
+  color: var(--rc-color-link-1);
 
   @media ${VIEWPORT.MOBILE} {
     font-size: 1.2rem;
+  }
+
+  :hover {
+    color: var(--rc-color-link-1-hover);
   }
 `

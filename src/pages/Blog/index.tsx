@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { FC, useState, useMemo } from 'react'
 import { useNavigate } from 'react-router'
 import { observer } from 'mobx-react-lite'
@@ -5,9 +6,10 @@ import store from 'app/store'
 import { filterByObjectKey } from 'shared/utils/filtration'
 import { msToLocalDate } from 'shared/utils/date'
 import Filtration from 'widgets/Filtration'
+import Sorting from 'widgets/Sorting'
 import PostPreview from 'widgets/PostPreview'
 import Pagination from 'widgets/Pagination'
-import { StyledWrapper, StyledPosts, StyledFiltration, StyledPreviewWrapper } from './ui'
+import { StyledWrapper, StyledPosts, StyledOptions, StyledPreviewWrapper } from './ui'
 
 type FilterState = {
   author: string
@@ -33,6 +35,12 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
 
   const onPageChange = (newPage: number) => {
     store.setCurrentPage(newPage)
+  }
+
+  const [sortingState, setSortingState] = useState<string | undefined>(undefined)
+
+  const onSortingChange = (value: string) => {
+    setSortingState(value)
   }
 
   const processedPosts = useMemo(() => {
@@ -62,20 +70,34 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
     return posts
   }, [filtrationState, posts])
 
+  const sortedPosts = useMemo(() => {
+    if (sortingState && processedPosts) {
+      switch (sortingState) {
+        case 'newOnesFirst':
+          return processedPosts
+        case 'oldOnesFirst':
+          return [...processedPosts].sort((p1, p2) => +p1.date - +p2.date)
+      }
+    }
+
+    return processedPosts
+  }, [processedPosts, sortingState])
+
   return (
     <StyledWrapper>
       {isPending ? (
         <div>Ожидание...</div>
       ) : (
         <StyledPosts>
-          <StyledFiltration>
+          <StyledOptions>
             <Filtration onChange={onFiltrationChange} authors={authors} />
-          </StyledFiltration>
+            <Sorting onChange={onSortingChange} />
+          </StyledOptions>
 
-          {!processedPosts?.length ? (
+          {!sortedPosts?.length ? (
             <h3>Нет постов</h3>
           ) : (
-            processedPosts.map(({ postId, title, description, author, date }) => (
+            sortedPosts.map(({ postId, title, description, author, date }) => (
               <StyledPreviewWrapper key={postId}>
                 <PostPreview
                   postId={postId}
@@ -89,7 +111,7 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
             ))
           )}
 
-          {pages > 1 && <Pagination max={pages} onChange={onPageChange} />}
+          {pages > 1 && false && <Pagination max={pages} onChange={onPageChange} />}
         </StyledPosts>
       )}
     </StyledWrapper>

@@ -10,12 +10,7 @@ export const StyledWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: ArgosGeorge;
-  color: var(--rc-color-text-2);
-
-  @media ${VIEWPORT} {
-    font-size: 1.7rem;
-  }
+  color: var(--rc-color-secondary);
 
   &::after {
     content: '';
@@ -44,10 +39,6 @@ export const StyledPrivacy = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-  @media ${VIEWPORT} {
-    font-size: 1.1rem;
-  }
 `
 
 export const StyledInfo = styled.button`

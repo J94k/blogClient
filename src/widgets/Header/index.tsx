@@ -1,17 +1,6 @@
 import { FC } from 'react'
 import images from 'shared/assets/images'
-import store from 'app/store'
-import { VIEWPORT } from 'shared/ui/mixins/viewport'
-import NeonLabel from 'shared/components/NeonLabel'
-import HiddenForViewport from 'shared/components/HiddenForViewport'
-import {
-  StyledWrapper,
-  StyledTop,
-  StyledBottom,
-  StyledLogo,
-  StyledWinterHat,
-  StyledTitle,
-} from './ui'
+import { StyledWrapper, StyledTop, StyledBottom, StyledLogo, StyledTitle } from './ui'
 import Navigation from './components/Navigation'
 import Settings from './components/Settings'
 
@@ -27,16 +16,8 @@ const Header: FC<Props> = ({ name, links, themes, onThemeChange }) => {
     <StyledWrapper>
       <StyledTop>
         <StyledLogo>
-          <StyledWinterHat src={images.WinterHat} />
-          <img
-            className="main-logo"
-            src={store.theme === 'dark' ? images.MainLogoDark : images.MainLogoLight}
-            alt={`${name} логотип`}
-          />
+          <img className="main-logo" src={images.MainLogo} alt={`${name} логотип`} />
           <StyledTitle>Ratcloud</StyledTitle>
-          <HiddenForViewport viewport={VIEWPORT.MOBILE}>
-            <NeonLabel>V1</NeonLabel>
-          </HiddenForViewport>
         </StyledLogo>
 
         <Settings themes={themes} onThemeChange={onThemeChange} />

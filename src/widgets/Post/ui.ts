@@ -2,7 +2,11 @@ import styled from 'styled-components'
 
 export const StyledPost = styled.article``
 
-export const StyledTitle = styled.h2``
+export const StyledTitle = styled.h2`
+  margin: 0 0 1rem;
+  padding: 8px 0;
+  line-height: 36px;
+`
 
 export const StyledDescription = styled.blockquote`
   position: relative;

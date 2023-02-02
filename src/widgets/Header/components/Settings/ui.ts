@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
+import { VIEWPORT } from 'shared/ui/mixins/viewport'
 
 export const StyledWrapper = styled.div`
   position: relative;
 `
 
 export const StyledToggle = styled.button`
-  min-width: 2.8rem;
+  min-width: 2.6rem;
   padding: 0.2rem;
   display: flex;
   align-items: center;
@@ -13,17 +14,22 @@ export const StyledToggle = styled.button`
   border-radius: 0.3rem;
   border: none;
   background-color: transparent;
-  transition: 0.12s;
+  transition: 0.1s;
 
   &:hover {
-    background-color: var(--rc-color-background-2);
+    // change icon color
+    --rc-color-secondary: var(--rc-color-link-1);
+  }
+
+  @media ${VIEWPORT.MOBILE} {
+    min-width: 2.4rem;
   }
 `
 
 export const StyledSettings = styled.div<{ isVisible: boolean }>`
   position: absolute;
-  top: 3.5rem;
-  right: 0;
+  top: 2.8rem;
+  right: 4px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -46,14 +52,10 @@ export const StyledItem = styled.div`
   &:not(:last-child) {
     margin-bottom: 0.6rem;
   }
-
-  &:hover {
-    background-color: var(--rc-color-background-1);
-  }
 `
 
 export const StyledLabel = styled.span`
   display: inline-block;
   margin-bottom: 0.3rem;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 `

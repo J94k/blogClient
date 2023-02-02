@@ -10,9 +10,11 @@ const Author: FC<Props> = ({ nickname, story = '-' }) => {
   return (
     <StyledAuthor>
       <StyledNickname>{nickname}</StyledNickname>
-      <StyledStory>
-        <strong>История:</strong> {story}
-      </StyledStory>
+      {story && story !== '-' && (
+        <StyledStory>
+          <strong>История:</strong> {story}
+        </StyledStory>
+      )}
     </StyledAuthor>
   )
 }
