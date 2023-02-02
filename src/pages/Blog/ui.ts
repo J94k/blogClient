@@ -16,14 +16,13 @@ export const StyledOptions = styled.div`
   padding: 0.4rem;
   display: flex;
   border: 1px solid var(--rc-color-border-3);
-  border-radius: 0.6rem;
-  backdrop-filter: blur(10px);
+  border-radius: 10px;
 
   > * {
     flex: 1;
 
     &:not(:last-child) {
-      margin-right: 0.6rem;
+      margin-right: 10px;
     }
   }
 

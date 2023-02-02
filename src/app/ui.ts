@@ -10,7 +10,7 @@ export const AppLayout = styled.div`
   background: var(--rc-color-background-surface);
 
   @media ${VIEWPORT.MOBILE} {
-    grid-template-rows: 9rem 1fr 14rem;
+    grid-template-rows: 9rem 1fr 11rem;
   }
 `
 

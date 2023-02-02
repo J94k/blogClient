@@ -16,7 +16,11 @@ export const StyledPostPreview = styled.section`
 
 export const StyledTitle = styled.h3`
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+
+  @media ${VIEWPORT.MOBILE} {
+    font-size: 1.2rem;
+  }
 `
 
 export const StyledDescription = styled.p`
@@ -24,6 +28,10 @@ export const StyledDescription = styled.p`
   padding: 0.7rem 0;
   font-size: 1.1rem;
   color: var(--rc-color-secondary);
+
+  @media ${VIEWPORT.MOBILE} {
+    font-size: 1rem;
+  }
 `
 
 export const StyledBottom = styled.div`

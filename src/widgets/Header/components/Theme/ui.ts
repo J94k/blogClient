@@ -13,18 +13,20 @@ export const StyledWrapper = styled.div`
 
 export const StyledOption = styled.button`
   min-width: 8rem;
-  padding: 0.4rem 0;
+  padding: 0.6rem;
+  border-radius: 8px;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: none;
   background: inherit;
+  transition: 0.1s;
 
   &:hover,
   &:focus {
-    color: var(--rc-color-link-1-hover);
-    border-color: var(--rc-color-link-1-hover);
+    color: var(--rc-color-link-1);
+    background-color: var(--rc-color-background-1);
   }
 
   .label {

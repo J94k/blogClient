@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import images from 'shared/assets/images'
-// import store from 'app/store'
 import { StyledWrapper, StyledTop, StyledBottom, StyledLogo, StyledTitle } from './ui'
 import Navigation from './components/Navigation'
 import Settings from './components/Settings'
