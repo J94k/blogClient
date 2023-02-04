@@ -9,11 +9,19 @@ const Bootstrap: FC = () => {
       store.setPostsPending(true)
 
       try {
-        const posts = await blogService.fetchAllPosts()
-
-        store.setPosts(posts)
+        const postPreviews = await blogService.fetchAllPostPreviews()
+        // @ts-ignore
+        store.setPostPreviews(postPreviews)
       } catch (error) {
-        log('Loading posts', error)
+        log('Error while fetching posts', error)
+      }
+
+      try {
+        const tags = await blogService.fetchTags()
+        // @ts-ignore
+        store.setTags(tags)
+      } catch (error) {
+        log('Error while fetching tags', error)
       }
 
       try {
@@ -21,7 +29,7 @@ const Bootstrap: FC = () => {
 
         store.setAuthors(authors)
       } catch (error) {
-        log('Loading authors', error)
+        log('Error while fetching authors', error)
       }
 
       store.setPostsPending(false)

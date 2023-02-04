@@ -6,13 +6,16 @@ declare namespace Post {
   type Author = string
   type Date = string
 
-  interface View {
-    postId: ID
-    title: Title
-    description: Description
+  interface Preview {
+    postId: string
+    title: string
+    description: string
+    author: string
+    date: string
+  }
+
+  interface View extends Preview {
     content: Content
-    author: Author
-    date: Date
   }
 }
 

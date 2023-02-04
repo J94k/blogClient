@@ -4,13 +4,16 @@ declare namespace Store {
 
   type Theme = typeof themeLight | typeof themeDark
 
-  type Post = {
+  type PostPreview = {
     postId: string
     title: string
     description: string
-    content: string
     author: string
     date: string
+  }
+
+  type Post = PostPreview & {
+    content: string
   }
 
   type Author = {
@@ -20,6 +23,8 @@ declare namespace Store {
 
   type Blog = {
     isPending: boolean
+    tags: string[]
+    postPreviews: PostPreview[]
     posts?: Record<string, Post>
     postsList?: Post[]
     authors: Author[]
@@ -35,7 +40,9 @@ declare namespace Store {
     extra: Extra
 
     setTheme: (theme: Store.Theme) => void
+    setTags: (tags: string[]) => void
     setPostsPending: (status: boolean) => void
+    setPostPreviews: (previews: PostPreview[]) => void
     setPosts: (posts: Blog.posts) => void
     setAuthors: (authors: Author[]) => void
     setCurrentPage: (page: number) => void

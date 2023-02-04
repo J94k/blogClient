@@ -17,13 +17,13 @@ type FilterState = {
 }
 
 type Props = {
-  posts?: Post.View[]
+  postPreviews?: Post.Preview[]
   authors: string[]
   pages: number
   isPending: boolean
 }
 
-const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
+const Blog: FC<Props> = ({ postPreviews, authors, pages, isPending }) => {
   const navigate = useNavigate()
   const onSelectPost = (id: string) => navigate(`/post/${id}`)
 
@@ -43,20 +43,20 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
     setSortingState(value)
   }
 
-  const processedPosts = useMemo(() => {
-    if (filtrationState && posts) {
-      let updated = posts
+  const processedPostPreviews = useMemo(() => {
+    if (filtrationState && postPreviews) {
+      let updated = postPreviews
 
       if (filtrationState.author) {
-        updated = filterByObjectKey<Post.View>({
-          list: Object.values(posts),
+        updated = filterByObjectKey<Post.Preview>({
+          list: [...postPreviews],
           key: 'author',
           target: filtrationState.author,
         })
       }
 
       if (filtrationState.date) {
-        updated = filterByObjectKey<Post.View>({
+        updated = filterByObjectKey<Post.Preview>({
           list: [...updated],
           key: 'date',
           valueFormatter: (v: unknown) => msToLocalDate(v as string),
@@ -67,21 +67,21 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
       return updated
     }
 
-    return posts
-  }, [filtrationState, posts])
+    return postPreviews
+  }, [filtrationState, postPreviews])
 
-  const sortedPosts = useMemo(() => {
-    if (sortingState && processedPosts) {
+  const sortedPostPreviews = useMemo(() => {
+    if (sortingState && processedPostPreviews) {
       switch (sortingState) {
         case 'newOnesFirst':
-          return processedPosts
+          return processedPostPreviews
         case 'oldOnesFirst':
-          return [...processedPosts].sort((p1, p2) => +p1.date - +p2.date)
+          return [...processedPostPreviews].sort((p1, p2) => +p1.date - +p2.date)
       }
     }
 
-    return processedPosts
-  }, [processedPosts, sortingState])
+    return processedPostPreviews
+  }, [processedPostPreviews, sortingState])
 
   return (
     <StyledWrapper>
@@ -94,10 +94,10 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
             <Sorting onChange={onSortingChange} />
           </StyledOptions>
 
-          {!sortedPosts?.length ? (
+          {!sortedPostPreviews?.length ? (
             <h3>Нет постов</h3>
           ) : (
-            sortedPosts.map(({ postId, title, description, author, date }) => (
+            sortedPostPreviews.map(({ postId, title, description, author, date }) => (
               <StyledPreviewWrapper key={postId}>
                 <PostPreview
                   postId={postId}
@@ -120,7 +120,7 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
 
 export default observer(() => (
   <Blog
-    posts={store.blog.postsList}
+    postPreviews={store.blog.postPreviews}
     authors={store.blog.authors.map(({ nickname }) => nickname)}
     pages={store.blog.pages}
     isPending={store.blog.isPending}
