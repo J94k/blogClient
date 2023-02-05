@@ -16,19 +16,10 @@ const fetchAllPosts = async (): Promise<unknown> => {
   return posts
 }
 
-const fetchPost = async (
-  id: string
-): Promise<{
-  postId: string
-  title: string
-  description: string
-  author: string
-  date: string
-  content: string
-}> => {
+const fetchPost = async (id: string): Promise<string> => {
   const post = await fetch(`${config.BLOG_SERVICE_URL}/post/${id}`, {
     method: 'GET',
-  }).then((res) => res.json())
+  }).then((res) => res.text())
 
   return post
 }

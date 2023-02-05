@@ -1,26 +1,22 @@
 import { FC } from 'react'
 import parsingService from 'shared/services/parsingService'
-import { msToLocalDate } from 'shared/utils/date'
-import AuthorLabel from 'shared/components/AuthorLabel'
-import DateLabel from 'shared/components/DateLabel'
 import Button from 'shared/components/Button'
-import { StyledPost, StyledTitle, StyledDescription, StyledContent, StyledFooter } from './ui'
+import { StyledPost, StyledFooter } from './ui'
 
-const Post: FC<Post.View> = ({ title, description, content, author, date }) => {
-  console.log("🚀 ~ file: index.tsx:10 ~ content", content)
+type Props = {
+  post: string
+}
+
+const Post: FC<Props> = ({ post }) => {
   const goBack = () => window.history.back()
 
-  const readableContent = parsingService.parseMarkdownToHtml(content)
+  const readableContent = parsingService.parseMarkdownToHtml(post)
 
   return (
     <StyledPost>
-      <StyledTitle>{title}</StyledTitle>
-      <StyledDescription>{description}</StyledDescription>
-      <StyledContent>{readableContent}</StyledContent>
+      <div dangerouslySetInnerHTML={{ __html: readableContent }}></div>
 
       <StyledFooter>
-        <AuthorLabel>{author}</AuthorLabel>
-        <DateLabel>{msToLocalDate(date)}</DateLabel>
         <Button onClick={goBack}>Назад</Button>
       </StyledFooter>
     </StyledPost>

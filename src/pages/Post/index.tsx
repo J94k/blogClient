@@ -30,7 +30,7 @@ const Post: FC<Props> = ({ /* post, */ id }) => {
     f()
   }, [id])
 
-  return <StyledWrapper>{tmpPost ? <PostWidget {...tmpPost} /> : 'Загрузка...'}</StyledWrapper>
+  return <StyledWrapper>{tmpPost ? <PostWidget post={tmpPost} /> : 'Загрузка...'}</StyledWrapper>
 }
 
 export default observer(() => {
