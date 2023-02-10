@@ -5,6 +5,7 @@ declare namespace Post {
   type Content = string
   type Author = string
   type Date = string
+  type Tag = string
 
   interface Preview {
     postId: string
@@ -12,6 +13,7 @@ declare namespace Post {
     description: string
     author: string
     date: string
+    tags: Tag[]
   }
 
   interface View extends Preview {

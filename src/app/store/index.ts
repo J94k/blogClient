@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx'
 import config from 'config'
 
 const defaultStore: Store.View = {
-  theme: 'light',
+  theme: window.localStorage.colorScheme || 'light',
   blog: {
     isPending: false,
     tags: [],

@@ -97,7 +97,7 @@ const Blog: FC<Props> = ({ postPreviews, authors, pages, isPending }) => {
           {!sortedPostPreviews?.length ? (
             <h3>Нет постов</h3>
           ) : (
-            sortedPostPreviews.map(({ postId, title, description, author, date }) => (
+            sortedPostPreviews.map(({ postId, title, description, author, date, tags = [] }) => (
               <StyledPreviewWrapper key={postId}>
                 <PostPreview
                   postId={postId}
@@ -106,6 +106,7 @@ const Blog: FC<Props> = ({ postPreviews, authors, pages, isPending }) => {
                   author={author}
                   date={date}
                   onContinue={onSelectPost}
+                  tags={tags}
                 />
               </StyledPreviewWrapper>
             ))

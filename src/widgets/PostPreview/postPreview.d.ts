@@ -5,6 +5,7 @@ declare namespace PostPreview {
   type Author = string
   type Date = string
   type OnContinue = (id: string) => void
+  type Tag = string
 
   interface View {
     postId: ID
@@ -13,6 +14,7 @@ declare namespace PostPreview {
     author: Author
     date: Date
     onContinue: OnContinue
+    tags: Tag[]
   }
 }
 
