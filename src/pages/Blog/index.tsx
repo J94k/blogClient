@@ -9,6 +9,7 @@ import Filtration from 'widgets/Filtration'
 import Sorting from 'widgets/Sorting'
 import PostPreview from 'widgets/PostPreview'
 import Pagination from 'widgets/Pagination'
+import { sortNewOnesFirst, sortOldOnesFirst } from './utils'
 import { StyledWrapper, StyledPosts, StyledOptions, StyledPreviewWrapper } from './ui'
 
 type FilterState = {
@@ -17,16 +18,16 @@ type FilterState = {
 }
 
 type Props = {
-  postPreviews?: Post.Preview[]
   authors: string[]
   pages: number
   isPending: boolean
 }
 
-const Blog: FC<Props> = ({ postPreviews, authors, pages, isPending }) => {
+const Blog: FC<Props> = ({ authors, pages, isPending }) => {
   const navigate = useNavigate()
   const onSelectPost = (id: string) => navigate(`/post/${id}`)
 
+  const postPreviews = sortNewOnesFirst(store.blog.postPreviews)
   const [filtrationState, setFiltrationState] = useState<FilterState | undefined>(undefined)
 
   const onFiltrationChange = (state: FilterState) => {
@@ -44,12 +45,12 @@ const Blog: FC<Props> = ({ postPreviews, authors, pages, isPending }) => {
   }
 
   const processedPostPreviews = useMemo(() => {
-    if (filtrationState && postPreviews) {
+    if (filtrationState && postPreviews?.length) {
       let updated = postPreviews
 
       if (filtrationState.author) {
         updated = filterByObjectKey<Post.Preview>({
-          list: [...postPreviews],
+          list: [...updated],
           key: 'author',
           target: filtrationState.author,
         })
@@ -67,16 +68,16 @@ const Blog: FC<Props> = ({ postPreviews, authors, pages, isPending }) => {
       return updated
     }
 
-    return postPreviews
+    return postPreviews?.length ? sortNewOnesFirst(postPreviews) : []
   }, [filtrationState, postPreviews])
 
   const sortedPostPreviews = useMemo(() => {
     if (sortingState && processedPostPreviews) {
       switch (sortingState) {
         case 'newOnesFirst':
-          return processedPostPreviews
+          return sortNewOnesFirst(processedPostPreviews)
         case 'oldOnesFirst':
-          return [...processedPostPreviews].sort((p1, p2) => +p1.date - +p2.date)
+          return sortOldOnesFirst(processedPostPreviews)
       }
     }
 
@@ -121,7 +122,6 @@ const Blog: FC<Props> = ({ postPreviews, authors, pages, isPending }) => {
 
 export default observer(() => (
   <Blog
-    postPreviews={store.blog.postPreviews}
     authors={store.blog.authors.map(({ nickname }) => nickname)}
     pages={store.blog.pages}
     isPending={store.blog.isPending}

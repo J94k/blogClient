@@ -10,6 +10,7 @@ declare namespace Store {
     description: string
     author: string
     date: string
+    tags: string[]
   }
 
   type Post = PostPreview & {

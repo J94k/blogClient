@@ -61,7 +61,7 @@ const Filtration: FC<Props> = ({ authors, onChange }) => {
       <StyledItem>
         Автор
         <StyledSelect name="author" onChange={selectAuthor}>
-          <option value="">...</option>
+          <option value="">-</option>
           {authors.map((author, i) => (
             <option key={i} value={author}>
               {author}
