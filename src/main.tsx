@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Bootstrap from 'app/Bootstrap'
 import App from 'app'
 import store from 'app/store'
@@ -8,11 +8,13 @@ import Blog from 'pages/Blog'
 import Squad from 'pages/Squad'
 import About from 'pages/About'
 import Post from 'pages/Post'
+import ErrorBoundary from 'shared/components/ErrorBoundary'
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <App store={store} />,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: '/',
