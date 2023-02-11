@@ -8,14 +8,6 @@ const fetchAllPostPreviews = async (): Promise<unknown> => {
   return previews
 }
 
-const fetchAllPosts = async (): Promise<unknown> => {
-  const posts = await fetch(`${config.BLOG_SERVICE_URL}/posts`, {
-    method: 'GET',
-  }).then((res) => res.json())
-
-  return posts
-}
-
 const fetchPost = async (id: string): Promise<string> => {
   const post = await fetch(`${config.BLOG_SERVICE_URL}/post/${id}`, {
     method: 'GET',
@@ -42,7 +34,6 @@ const fetchTags = async (): Promise<Store.Author[]> => {
 
 export default {
   fetchAllPostPreviews,
-  fetchAllPosts,
   fetchPost,
   fetchAuthors,
   fetchTags,
