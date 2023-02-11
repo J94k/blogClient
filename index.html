@@ -11,8 +11,23 @@
     <meta name="description" content="Еще один блог. Еще одна информационная помойка." />
     <meta
       http-equiv="Content-Security-Policy"
-      content="script-src 'self' https://api.ratcloud.org"
+      content="script-src 'self' 'unsafe-inline' *.ratcloud.org mc.yandex.ru"
     />
+    <style>
+      body {
+        background-color: var(--rc-color-background-1);
+      }
+    </style>
+    <script>
+      const { colorScheme } = window.localStorage
+
+      if (
+        colorScheme === 'dark' ||
+        (colorScheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)')?.matches)
+      ) {
+        document.getElementsByTagName('html')[0].classList.add('dark-theme')
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

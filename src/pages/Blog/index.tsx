@@ -9,6 +9,7 @@ import Filtration from 'widgets/Filtration'
 import Sorting from 'widgets/Sorting'
 import PostPreview from 'widgets/PostPreview'
 import Pagination from 'widgets/Pagination'
+import { sortNewOnesFirst, sortOldOnesFirst } from './utils'
 import { StyledWrapper, StyledPosts, StyledOptions, StyledPreviewWrapper } from './ui'
 
 type FilterState = {
@@ -17,16 +18,16 @@ type FilterState = {
 }
 
 type Props = {
-  posts?: Post.View[]
   authors: string[]
   pages: number
   isPending: boolean
 }
 
-const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
+const Blog: FC<Props> = ({ authors, pages, isPending }) => {
   const navigate = useNavigate()
   const onSelectPost = (id: string) => navigate(`/post/${id}`)
 
+  const postPreviews = sortNewOnesFirst(store.blog.postPreviews)
   const [filtrationState, setFiltrationState] = useState<FilterState | undefined>(undefined)
 
   const onFiltrationChange = (state: FilterState) => {
@@ -43,20 +44,20 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
     setSortingState(value)
   }
 
-  const processedPosts = useMemo(() => {
-    if (filtrationState && posts) {
-      let updated = posts
+  const processedPostPreviews = useMemo(() => {
+    if (filtrationState && postPreviews?.length) {
+      let updated = postPreviews
 
       if (filtrationState.author) {
-        updated = filterByObjectKey<Post.View>({
-          list: Object.values(posts),
+        updated = filterByObjectKey<Post.Preview>({
+          list: [...updated],
           key: 'author',
           target: filtrationState.author,
         })
       }
 
       if (filtrationState.date) {
-        updated = filterByObjectKey<Post.View>({
+        updated = filterByObjectKey<Post.Preview>({
           list: [...updated],
           key: 'date',
           valueFormatter: (v: unknown) => msToLocalDate(v as string),
@@ -67,21 +68,21 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
       return updated
     }
 
-    return posts
-  }, [filtrationState, posts])
+    return postPreviews?.length ? sortNewOnesFirst(postPreviews) : []
+  }, [filtrationState, postPreviews])
 
-  const sortedPosts = useMemo(() => {
-    if (sortingState && processedPosts) {
+  const sortedPostPreviews = useMemo(() => {
+    if (sortingState && processedPostPreviews) {
       switch (sortingState) {
         case 'newOnesFirst':
-          return processedPosts
+          return sortNewOnesFirst(processedPostPreviews)
         case 'oldOnesFirst':
-          return [...processedPosts].sort((p1, p2) => +p1.date - +p2.date)
+          return sortOldOnesFirst(processedPostPreviews)
       }
     }
 
-    return processedPosts
-  }, [processedPosts, sortingState])
+    return processedPostPreviews
+  }, [processedPostPreviews, sortingState])
 
   return (
     <StyledWrapper>
@@ -94,10 +95,10 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
             <Sorting onChange={onSortingChange} />
           </StyledOptions>
 
-          {!sortedPosts?.length ? (
+          {!sortedPostPreviews?.length ? (
             <h3>Нет постов</h3>
           ) : (
-            sortedPosts.map(({ postId, title, description, author, date }) => (
+            sortedPostPreviews.map(({ postId, title, description, author, date, tags = [] }) => (
               <StyledPreviewWrapper key={postId}>
                 <PostPreview
                   postId={postId}
@@ -106,6 +107,7 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
                   author={author}
                   date={date}
                   onContinue={onSelectPost}
+                  tags={tags}
                 />
               </StyledPreviewWrapper>
             ))
@@ -120,7 +122,6 @@ const Blog: FC<Props> = ({ posts, authors, pages, isPending }) => {
 
 export default observer(() => (
   <Blog
-    posts={store.blog.postsList}
     authors={store.blog.authors.map(({ nickname }) => nickname)}
     pages={store.blog.pages}
     isPending={store.blog.isPending}

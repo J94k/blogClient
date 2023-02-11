@@ -1,11 +1,19 @@
 import config from 'config'
 
-const fetchAllPosts = async (): Promise<unknown> => {
-  const posts = await fetch(`${config.BLOG_SERVICE_URL}/posts`, {
+const fetchAllPostPreviews = async (): Promise<unknown> => {
+  const previews = await fetch(`${config.BLOG_SERVICE_URL}/postPreviews`, {
     method: 'GET',
   }).then((res) => res.json())
 
-  return posts
+  return previews
+}
+
+const fetchPost = async (id: string): Promise<string> => {
+  const post = await fetch(`${config.BLOG_SERVICE_URL}/post/${id}`, {
+    method: 'GET',
+  }).then((res) => res.text())
+
+  return post
 }
 
 const fetchAuthors = async (): Promise<Store.Author[]> => {
@@ -16,7 +24,17 @@ const fetchAuthors = async (): Promise<Store.Author[]> => {
   return authors
 }
 
+const fetchTags = async (): Promise<Store.Author[]> => {
+  const authors = await fetch(`${config.BLOG_SERVICE_URL}/tags`, {
+    method: 'GET',
+  }).then((res) => res.json())
+
+  return authors
+}
+
 export default {
-  fetchAllPosts,
+  fetchAllPostPreviews,
+  fetchPost,
   fetchAuthors,
+  fetchTags,
 }

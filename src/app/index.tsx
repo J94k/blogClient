@@ -34,7 +34,12 @@ const App: FC<{ store: Store.View }> = ({ store }) => {
   }
 
   useEffect(() => {
-    document.body.dataset.scheme = store.theme
+    const html = document.getElementsByTagName('html')[0]
+
+    window.localStorage.colorScheme = store.theme
+
+    if (store.theme === 'dark') html.classList.add('dark-theme')
+    else html.classList.remove('dark-theme')
   }, [store.theme])
 
   return (

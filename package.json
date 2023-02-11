@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "localforage": "^1.10.0",
+    "marked": "^4.2.12",
     "match-sorter": "^6.3.1",
     "mobx": "^6.7.0",
     "mobx-react-lite": "^3.4.0",
@@ -25,6 +26,7 @@
     "@testing-library/react": "^13.4.0",
     "@types/compose-function": "^0.0.30",
     "@types/jest": "^29.2.3",
+    "@types/marked": "^4.0.8",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@types/react-router": "^5.1.19",

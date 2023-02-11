@@ -35,8 +35,9 @@ export const StyledDescription = styled.p`
 `
 
 export const StyledBottom = styled.div`
-  margin-top: 8px;
+  margin: 8px 0 16px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   @media ${VIEWPORT.MOBILE} {

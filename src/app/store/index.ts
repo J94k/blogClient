@@ -2,9 +2,11 @@ import { makeAutoObservable } from 'mobx'
 import config from 'config'
 
 const defaultStore: Store.View = {
-  theme: 'light',
+  theme: window.localStorage.colorScheme || 'light',
   blog: {
     isPending: false,
+    tags: [],
+    postPreviews: [],
     posts: undefined,
     postsList: undefined,
     authors: [],
@@ -16,8 +18,14 @@ const defaultStore: Store.View = {
   setTheme(theme) {
     this.theme = theme
   },
+  setTags(tags) {
+    this.blog.tags = tags
+  },
   setPostsPending(status) {
     this.blog.isPending = status
+  },
+  setPostPreviews(previews) {
+    this.blog.postPreviews = previews
   },
   setPosts(posts: Record<string, Store.Post>) {
     this.blog.posts = posts

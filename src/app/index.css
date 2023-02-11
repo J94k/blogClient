@@ -32,7 +32,6 @@ body {
   letter-spacing: 0.08rem;
   line-height: 1.8rem;
   background-color: var(--rc-color-background-1);
-  background: var(--rc-color-background-1);
   color: var(--rc-color-text-1);
   scrollbar-width: thin;
   scrollbar-color: var(--rc-color-border-3);
