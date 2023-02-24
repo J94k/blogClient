@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const StyledButton = styled.button`
   padding: 0.5rem 0.8rem;
@@ -36,4 +36,55 @@ export const StyledButtonContinue = styled(StyledButton)`
   &:hover::after {
     border-color: var(--rc-color-button-background-1-hover);
   }
+`
+
+export const StyledButtonArrow = styled(StyledButton)<{
+  direction: string
+}>`
+  position: relative;
+  padding: 1.2rem;
+  border-color: transparent;
+
+  &::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-color: var(--rc-color-border-1);
+  }
+
+  &:hover::after {
+    border-color: var(--rc-color-button-background-1-hover);
+  }
+
+  ${({ direction }) => {
+    if (direction === 'right')
+      return css`
+        &::after {
+          transform: translate(-50%, -50%) rotateZ(45deg);
+        }
+      `
+    if (direction === 'left')
+      return css`
+        &::after {
+          transform: translate(-50%, -50%) rotateZ(225deg);
+        }
+      `
+    if (direction === 'up')
+      return css`
+        &::after {
+          transform: translate(-50%, -50%) rotateZ(-45deg);
+        }
+      `
+    if (direction === 'down')
+      return css`
+        &::after {
+          transform: translate(-50%, -50%) rotateZ(135deg);
+        }
+      `
+  }}
 `

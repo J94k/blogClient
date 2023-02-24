@@ -30,7 +30,7 @@ declare namespace Store {
     postsList?: Post[]
     authors: Author[]
     pages: number
-    currentPage?: number
+    currentPage: number
   }
 
   type Extra = Record<string, unknown>
