@@ -11,7 +11,7 @@ const defaultStore: Store.View = {
     postsList: undefined,
     authors: [],
     pages: 0,
-    currentPage: undefined,
+    currentPage: 0,
   },
   extra: {},
 
@@ -26,6 +26,11 @@ const defaultStore: Store.View = {
   },
   setPostPreviews(previews) {
     this.blog.postPreviews = previews
+
+    const pages = Math.ceil(this.blog.postPreviews.length / config.POSTS_PER_PAGE)
+
+    this.blog.pages = pages
+    if (pages > 0) this.blog.currentPage = 1
   },
   setPosts(posts: Record<string, Store.Post>) {
     this.blog.posts = posts

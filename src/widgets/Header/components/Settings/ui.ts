@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components'
-import { VIEWPORT } from 'shared/ui/mixins/viewport'
 
 export const StyledWrapper = styled.div`
   position: relative;
 `
 
 export const StyledToggle = styled.button`
-  min-width: 2.6rem;
+  min-width: 2.2rem;
   padding: 0.2rem;
   display: flex;
   align-items: center;
@@ -19,10 +18,6 @@ export const StyledToggle = styled.button`
   &:hover {
     // change icon color
     --rc-color-secondary: var(--rc-color-link-1);
-  }
-
-  @media ${VIEWPORT.MOBILE} {
-    min-width: 2.4rem;
   }
 `
 

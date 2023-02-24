@@ -21,7 +21,7 @@ const Footer: FC<Props> = ({ name }) => {
   return (
     <StyledWrapper>
       <StyledCopyright>
-        Copyright © {currentYear} {name}
+        © {currentYear} {name}
       </StyledCopyright>
       <StyledPrivacy>
         <StyledInfo onClick={showToS}>Условия обслуживания</StyledInfo>
@@ -34,7 +34,6 @@ const Footer: FC<Props> = ({ name }) => {
         onClose={hideToS}
         content={<>Нет условий. Мы не обслуживаем.</>}
       />
-
       <Modal
         visible={displayPP}
         onClose={hidePP}

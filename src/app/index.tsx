@@ -4,8 +4,7 @@ import { Outlet } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import config from 'config'
 import icons from 'shared/assets/icons'
-import { AppLayout, StyledOutlet } from './ui'
-import SnowFlakesBackground from 'shared/components/SnowFlakesBackground'
+import { AppLayout, StyledOutlet, StyledHeader, StyledMain } from './ui'
 import Header from 'widgets/Header'
 import Footer from 'widgets/Footer'
 
@@ -44,18 +43,19 @@ const App: FC<{ store: Store.View }> = ({ store }) => {
 
   return (
     <AppLayout>
-      <SnowFlakesBackground />
-      <Header
-        name={config.PROJECT_NAME}
-        links={links}
-        themes={themes}
-        onThemeChange={onThemeChange}
-      />
-      <main>
+      <StyledHeader>
+        <Header
+          name={config.PROJECT_NAME}
+          links={links}
+          themes={themes}
+          onThemeChange={onThemeChange}
+        />
+      </StyledHeader>
+      <StyledMain>
         <StyledOutlet>
           <Outlet />
         </StyledOutlet>
-      </main>
+      </StyledMain>
       <Footer name={config.PROJECT_NAME} />
     </AppLayout>
   )

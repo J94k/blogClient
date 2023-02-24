@@ -16,7 +16,7 @@ export const StyledPagination = styled.ul`
 export const StyledPageItem = styled.li<{ active: boolean }>`
   cursor: pointer;
   padding: 0.4rem 1rem;
-  border-right: 1px solid var(--rc-color-border-2);
+  border: 1px solid var(--rc-color-border-3);
 
   &:first-child {
     border-top-left-radius: inherit;
@@ -25,18 +25,20 @@ export const StyledPageItem = styled.li<{ active: boolean }>`
 
   &:hover,
   &:focus {
-    background-color: var(--rc-color-button-background-2);
+    ${({ active }) => !active && 'background-color: var(--rc-color-button-background-1-hover);'}
   }
 
   ${({ active }) =>
     active &&
     css`
       cursor: unset;
-      background-color: var(--rc-color-button-background-2-hover);
+      color: var(--rc-color-button-background-1-hover);
+      border-color: var(--rc-color-button-background-1-hover);
 
       &:hover,
       &:focus {
-        background-color: var(--rc-color-button-background-2-hover);
+        color: var(--rc-color-button-background-1-hover);
+        border-color: var(--rc-color-button-background-1-hover);
       }
     `}
 `
