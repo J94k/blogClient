@@ -27,6 +27,7 @@ const PostPreview: FC<
   maxDescriptionLength = 150,
 }) => {
   const handleContinue = () => onContinue(postId)
+  const localDate = msToLocalDate(date)
 
   return (
     <StyledPostPreview>
@@ -39,7 +40,7 @@ const PostPreview: FC<
         <StyledButtonContinue onClick={handleContinue}>Продолжить</StyledButtonContinue>
         <StyledMetadata>
           <div>
-            <AuthorLabel>{author}</AuthorLabel> <DateLabel>{msToLocalDate(date)}</DateLabel>
+            <AuthorLabel>{author}</AuthorLabel> <DateLabel>{localDate}</DateLabel>
           </div>
         </StyledMetadata>
       </StyledBottom>

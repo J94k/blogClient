@@ -6,6 +6,7 @@ export const StyledWrapper = styled.footer`
   max-width: var(--rc-max-width-content);
   width: 100%;
   margin: 0 auto;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,12 +40,12 @@ export const StyledPrivacy = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
 `
 
 export const StyledInfo = styled.button`
   padding: 0.2rem 0.4rem;
   border: none;
-  font-family: Old-Soviet;
   background-color: transparent;
 
   &:hover,
