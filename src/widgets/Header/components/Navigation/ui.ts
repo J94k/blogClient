@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { VIEWPORT } from 'shared/ui/mixins/viewport'
 
 export const StyledWrapper = styled.nav`
@@ -8,12 +8,78 @@ export const StyledWrapper = styled.nav`
     display: flex;
     flex-wrap: wrap;
     align-items; center;
-    list-style: none;
+    list-style: none;    
   }
 
   .navigation-list__item {
     &:not(:last-child) {
       margin-right: 1.4rem;
+    }
+  }
+
+  @media ${VIEWPORT.MOBILE_MD} {
+    .navigation-list {
+      flex-direction: column;
+    }
+
+    .navigation-list__item {
+      margin-right: 0;
+      margin-bottom: 1.4rem;
+      padding: 8px;
+    }
+  }
+`
+
+export const StyledToggle = styled.button`
+  min-width: 2.2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: transparent;
+  transition: 0.1s;
+
+  &:hover {
+    // change icon color
+    --rc-color-secondary: var(--rc-color-link-1);
+  }
+
+  @media ${VIEWPORT.MOBILE_MD} {
+    display: flex;
+  }
+`
+
+export const StyledMenuWrapper = styled.div<{ isOpen: boolean }>`
+  @media ${VIEWPORT.MOBILE_MD} {
+    position: fixed;
+    z-index: 1;
+    top: -40%;
+    left: 3%;
+    max-width: var(--rc-max-width-content);
+    width: 94%;
+    height: 96%;
+    padding: 18px;
+    border-radius: 0.6rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 145ms;
+    background-color: var(--rc-color-background-2);
+    box-shadow: 0 0 1rem var(--rc-color-shadow-1);
+    border: 2px solid var(--rc-color-border-3);
+
+    ${({ isOpen }) =>
+      isOpen &&
+      css`
+        visibility: visible;
+        opacity: 1;
+        top: 2%;
+      `}
+
+    @media ${VIEWPORT.MOBILE_MD} {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
   }
 `
@@ -22,11 +88,25 @@ export const StyledRouteLink = styled.span`
   font-size: 18px;
   color: var(--rc-color-link-1);
 
-  @media ${VIEWPORT.MOBILE} {
-    font-size: 1.2rem;
+  @media ${VIEWPORT.MOBILE_MD} {
+    font-size: 22px;
   }
 
   :hover {
     color: var(--rc-color-link-1-hover);
+  }
+`
+
+export const StyledCloseButton = styled.button`
+  display: none;
+  width: 42px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+
+  @media ${VIEWPORT.MOBILE_MD} {
+    display: flex;
   }
 `

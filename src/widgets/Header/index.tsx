@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import images from 'shared/assets/images'
-import { StyledWrapper, StyledTop, StyledBottom, StyledLogo, StyledTitle } from './ui'
+import { StyledWrapper, StyledItem, StyledLogo, StyledTitle, StyledMarginRight } from './ui'
 import Navigation from './components/Navigation'
 import Settings from './components/Settings'
 
@@ -14,17 +14,17 @@ type Props = {
 const Header: FC<Props> = ({ name, links, themes, onThemeChange }) => {
   return (
     <StyledWrapper>
-      <StyledTop>
-        <StyledLogo>
-          <img className="main-logo" src={images.MainLogo} alt={`${name} логотип`} />
-          <StyledTitle>Ratcloud</StyledTitle>
-        </StyledLogo>
+      <StyledLogo>
+        <img className="main-logo" src={images.MainLogo} alt={`${name} логотип`} />
+        <StyledTitle>Ratcloud</StyledTitle>
+      </StyledLogo>
 
+      <StyledItem>
+        <StyledMarginRight>
+          <Navigation links={links} />
+        </StyledMarginRight>
         <Settings themes={themes} onThemeChange={onThemeChange} />
-      </StyledTop>
-      <StyledBottom>
-        <Navigation links={links} />
-      </StyledBottom>
+      </StyledItem>
     </StyledWrapper>
   )
 }

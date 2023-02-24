@@ -5,12 +5,12 @@ export const AppLayout = styled.div`
   min-height: 100vh;
   padding: 0 16px;
   display: grid;
-  grid-template-rows: 8rem 1fr 10rem;
+  grid-template-rows: 6rem 1fr 10rem;
   grid-template-columns: 1fr;
   background: var(--rc-color-background-surface);
 
   @media ${VIEWPORT.MOBILE} {
-    grid-template-rows: 9rem 1fr 11rem;
+    grid-template-rows: 6rem 1fr 11rem;
   }
 `
 
