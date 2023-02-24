@@ -8,7 +8,7 @@ export const StyledWrapper = styled.nav`
     display: flex;
     flex-wrap: wrap;
     align-items; center;
-    list-style: none;    
+    list-style: none;
   }
 
   .navigation-list__item {
