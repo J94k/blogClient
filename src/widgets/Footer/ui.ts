@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { VIEWPORT } from 'shared/ui/mixins/viewport'
 
 export const StyledWrapper = styled.footer`
   position: relative;
@@ -51,9 +50,5 @@ export const StyledInfo = styled.button`
   &:hover,
   &:focus {
     text-decoration: underline;
-  }
-
-  @media ${VIEWPORT} {
-    padding: 0.6rem 0.4rem;
   }
 `

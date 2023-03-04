@@ -14,7 +14,8 @@ const Post: FC<Props> = ({ post }) => {
 
   return (
     <StyledPost>
-      <div dangerouslySetInnerHTML={{ __html: readableContent }}></div>
+      {/* rome-ignore lint/security/noDangerouslySetInnerHtml: it is what is it */}
+      <div dangerouslySetInnerHTML={{ __html: readableContent }} />
 
       <StyledFooter>
         <Button onClick={goBack}>Назад</Button>

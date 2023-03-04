@@ -10,6 +10,7 @@ export const filterByObjectKey = <T>({
   target: string
 }): T[] => {
   return list.filter(
-    (item: T) => (valueFormatter ? valueFormatter(item[key]) : item[key]) === target
+    (item: T) =>
+      (valueFormatter ? valueFormatter(item[key]) : item[key]) === target
   )
 }
