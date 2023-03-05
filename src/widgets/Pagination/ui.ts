@@ -25,7 +25,8 @@ export const StyledPageItem = styled.li<{ active: boolean }>`
 
   &:hover,
   &:focus {
-    ${({ active }) => !active && 'background-color: var(--rc-color-button-background-1-hover);'}
+    ${({ active }) =>
+      !active && 'background-color: var(--rc-color-button-background-1-hover);'}
   }
 
   ${({ active }) =>

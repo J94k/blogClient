@@ -20,7 +20,6 @@ const Settings: FC<Props> = ({ themes, onThemeChange }) => {
   return (
     <StyledWrapper ref={settingsNode}>
       <Toggle onClick={toggleMenu} />
-
       <StyledSettings isVisible={isVisible}>
         <StyledItem>
           <StyledLabel>Тема</StyledLabel>

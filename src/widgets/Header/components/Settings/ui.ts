@@ -31,7 +31,8 @@ export const StyledSettings = styled.div<{ isVisible: boolean }>`
   border-radius: 0.4rem;
   border: 1px solid var(--rc-color-border-3);
   box-shadow: 0 0 1rem var(--rc-color-shadow-1);
-  background-color: var(--rc-color-background-2);
+  backdrop-filter: blur(2px);
+  background-color: var(--rc-color-background-2-transparent);
 
   ${({ isVisible }) =>
     !isVisible &&
@@ -52,5 +53,4 @@ export const StyledItem = styled.div`
 export const StyledLabel = styled.span`
   display: inline-block;
   margin-bottom: 0.3rem;
-  /* opacity: 0.6; */
 `

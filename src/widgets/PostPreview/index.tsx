@@ -37,10 +37,13 @@ const PostPreview: FC<
         {description.length > maxDescriptionLength ? '...' : null}
       </StyledDescription>
       <StyledBottom>
-        <StyledButtonContinue onClick={handleContinue}>Продолжить</StyledButtonContinue>
+        <StyledButtonContinue onClick={handleContinue}>
+          Продолжить
+        </StyledButtonContinue>
         <StyledMetadata>
           <div>
-            <AuthorLabel>{author}</AuthorLabel> <DateLabel>{localDate}</DateLabel>
+            <AuthorLabel>{author}</AuthorLabel>{' '}
+            <DateLabel>{localDate}</DateLabel>
           </div>
         </StyledMetadata>
       </StyledBottom>

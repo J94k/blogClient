@@ -13,7 +13,8 @@ const Theme: FC<Props> = ({ themes, onChange }) => {
     <StyledWrapper>
       {themes.map(({ label, icon, value }, i) => (
         <StyledOption key={i} onClick={() => onSelect(value)}>
-          <span className="label">{label}</span> <span className="icon">{icon}</span>
+          <span className="label">{label}</span>{' '}
+          <span className="icon">{icon}</span>
         </StyledOption>
       ))}
     </StyledWrapper>

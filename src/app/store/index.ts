@@ -27,7 +27,9 @@ const defaultStore: Store.View = {
   setPostPreviews(previews) {
     this.blog.postPreviews = previews
 
-    const pages = Math.ceil(this.blog.postPreviews.length / config.POSTS_PER_PAGE)
+    const pages = Math.ceil(
+      this.blog.postPreviews.length / config.POSTS_PER_PAGE
+    )
 
     this.blog.pages = pages
     if (pages > 0) this.blog.currentPage = 1
@@ -44,7 +46,9 @@ const defaultStore: Store.View = {
 
       return Number(p2.date) - Number(p1.date)
     })
-    this.blog.pages = Math.ceil(this.blog.postsList.length / config.POSTS_PER_PAGE)
+    this.blog.pages = Math.ceil(
+      this.blog.postsList.length / config.POSTS_PER_PAGE
+    )
   },
   setAuthors(authors) {
     this.blog.authors = authors
@@ -53,7 +57,7 @@ const defaultStore: Store.View = {
     this.blog.currentPage = page
   },
   getPost(id = '') {
-    if (!this.blog?.posts || !id) return
+    if (!(this.blog?.posts && id)) return
 
     return Object.values(this.blog?.posts).find(({ postId }) => postId === id)
   },

@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import { FC, useState, useMemo, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import config from 'config'
 import store from 'app/store'
@@ -11,7 +11,12 @@ import Sorting from 'widgets/Sorting'
 import PostPreview from 'widgets/PostPreview'
 import Pagination from 'widgets/Pagination'
 import { sortNewOnesFirst, sortOldOnesFirst } from './utils'
-import { StyledWrapper, StyledPosts, StyledOptions, StyledPreviewWrapper } from './ui'
+import {
+  StyledWrapper,
+  StyledPosts,
+  StyledOptions,
+  StyledPreviewWrapper,
+} from './ui'
 
 type FilterState = {
   author: string
@@ -44,7 +49,9 @@ const Blog: FC<Props> = ({ authors, pages, isPending, currentPage }) => {
   }, [currentPage])
 
   const postPreviews = sortNewOnesFirst(store.blog.postPreviews)
-  const [filtrationState, setFiltrationState] = useState<FilterState | undefined>(undefined)
+  const [filtrationState, setFiltrationState] = useState<
+    FilterState | undefined
+  >(undefined)
 
   const onFiltrationChange = (state: FilterState) => {
     setFiltrationState(state)
@@ -54,7 +61,9 @@ const Blog: FC<Props> = ({ authors, pages, isPending, currentPage }) => {
     store.setCurrentPage(newPage)
   }
 
-  const [sortingState, setSortingState] = useState<string | undefined>(undefined)
+  const [sortingState, setSortingState] = useState<string | undefined>(
+    undefined
+  )
 
   const onSortingChange = (value: string) => {
     setSortingState(value)
@@ -119,19 +128,21 @@ const Blog: FC<Props> = ({ authors, pages, isPending, currentPage }) => {
           {!previewsOnCurrentPage?.length ? (
             <h3>Нет постов</h3>
           ) : (
-            previewsOnCurrentPage.map(({ postId, title, description, author, date, tags = [] }) => (
-              <StyledPreviewWrapper key={postId}>
-                <PostPreview
-                  postId={postId}
-                  title={title}
-                  description={description}
-                  author={author}
-                  date={date}
-                  onContinue={onSelectPost}
-                  tags={tags}
-                />
-              </StyledPreviewWrapper>
-            ))
+            previewsOnCurrentPage.map(
+              ({ postId, title, description, author, date, tags = [] }) => (
+                <StyledPreviewWrapper key={postId}>
+                  <PostPreview
+                    postId={postId}
+                    title={title}
+                    description={description}
+                    author={author}
+                    date={date}
+                    onContinue={onSelectPost}
+                    tags={tags}
+                  />
+                </StyledPreviewWrapper>
+              )
+            )
           )}
 
           {pages > 1 && <Pagination max={pages} onChange={onPageChange} />}

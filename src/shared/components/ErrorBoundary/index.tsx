@@ -1,7 +1,12 @@
 import { FC } from 'react'
 import { useRouteError, isRouteErrorResponse } from 'react-router-dom'
 import icons from 'shared/assets/icons'
-import { StyledWrapper, StyledTitle, StyledDescription, StyledIconWrapper } from './ui'
+import {
+  StyledWrapper,
+  StyledTitle,
+  StyledDescription,
+  StyledIconWrapper,
+} from './ui'
 
 const ErrorBoundary: FC = () => {
   const error = useRouteError()

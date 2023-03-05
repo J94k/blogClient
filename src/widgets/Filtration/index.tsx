@@ -10,7 +10,10 @@ const toFiltrationDate = (date: string): string => {
   if (!date) return ''
 
   const year = date.match(lastNumRegExp)?.[0] || ''
-  const withoutYear = date.slice(0, year ? date.length - year.length - 1 : undefined)
+  const withoutYear = date.slice(
+    0,
+    year ? date.length - year.length - 1 : undefined
+  )
 
   return `${year}-${withoutYear}`
 }

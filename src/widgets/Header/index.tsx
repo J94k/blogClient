@@ -1,6 +1,12 @@
 import { FC } from 'react'
 import images from 'shared/assets/images'
-import { StyledWrapper, StyledItem, StyledLogo, StyledTitle, StyledMarginRight } from './ui'
+import {
+  StyledWrapper,
+  StyledItem,
+  StyledLogoLink,
+  StyledTitle,
+  StyledMarginRight,
+} from './ui'
 import Navigation from './components/Navigation'
 import Settings from './components/Settings'
 
@@ -14,10 +20,14 @@ type Props = {
 const Header: FC<Props> = ({ name, links, themes, onThemeChange }) => {
   return (
     <StyledWrapper>
-      <StyledLogo>
-        <img className="main-logo" src={images.MainLogo} alt={`${name} логотип`} />
+      <StyledLogoLink href="/">
+        <img
+          className="main-logo"
+          src={images.MainLogo}
+          alt={`${name} логотип`}
+        />
         <StyledTitle>Ratcloud</StyledTitle>
-      </StyledLogo>
+      </StyledLogoLink>
 
       <StyledItem>
         <StyledMarginRight>

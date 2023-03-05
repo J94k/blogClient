@@ -2,12 +2,14 @@
 
 @font-face {
   font-family: 'ArgosGeorge';
-  src: local('ArgosGeorge'), url('../shared/assets/fonts/ArgosGeorge.ttf') format('truetype');
+  src: local('ArgosGeorge'),
+    url('../shared/assets/fonts/ArgosGeorge.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Old-Soviet';
-  src: local('Old-Soviet'), url('../shared/assets/fonts/Old-Soviet.otf') format('opentype');
+  src: local('Old-Soviet'),
+    url('../shared/assets/fonts/Old-Soviet.otf') format('opentype');
 }
 
 *,
@@ -71,7 +73,7 @@ select {
 a {
   text-decoration: none;
   color: var(--rc-color-link-1);
-  transition: 0.1s;
+  transition: 120ms;
 }
 
 a:hover,
