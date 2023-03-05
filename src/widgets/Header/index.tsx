@@ -3,7 +3,7 @@ import images from 'shared/assets/images'
 import {
   StyledWrapper,
   StyledItem,
-  StyledLogo,
+  StyledLogoLink,
   StyledTitle,
   StyledMarginRight,
 } from './ui'
@@ -20,14 +20,14 @@ type Props = {
 const Header: FC<Props> = ({ name, links, themes, onThemeChange }) => {
   return (
     <StyledWrapper>
-      <StyledLogo>
+      <StyledLogoLink href="/">
         <img
           className="main-logo"
           src={images.MainLogo}
           alt={`${name} логотип`}
         />
         <StyledTitle>Ratcloud</StyledTitle>
-      </StyledLogo>
+      </StyledLogoLink>
 
       <StyledItem>
         <StyledMarginRight>

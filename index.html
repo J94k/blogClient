@@ -6,9 +6,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b783e" />
+    <meta name="theme-color" content="#869eff" />
     <title>Ratcloud</title>
-    <meta name="description" content="Еще один блог. Еще одна информационная помойка." />
+    <meta
+      name="description"
+      content="Персональный сайт Ratcloud. Темы: программирование, психология, новости, книги, саморазвитие."
+    />
+    <meta name="color-scheme" content="light dark" />
     <meta
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline' api.ratcloud.org ratcloud.org"
@@ -23,7 +27,8 @@
 
       if (
         colorScheme === 'dark' ||
-        (colorScheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)')?.matches)
+        (colorScheme !== 'light' &&
+          window.matchMedia('(prefers-color-scheme: dark)')?.matches)
       ) {
         document.getElementsByTagName('html')[0].classList.add('dark-theme')
       }

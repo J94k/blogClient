@@ -55,32 +55,29 @@ export const StyledMenuWrapper = styled.div<{ isOpen: boolean }>`
     position: fixed;
     z-index: 1;
     top: -40%;
-    left: 3%;
+    left: 0;
     max-width: var(--rc-max-width-content);
-    width: 94%;
-    height: 96%;
+    width: 92vw;
+    height: 96vh;
     padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     border-radius: 0.6rem;
     opacity: 0;
     visibility: hidden;
     transition: 145ms;
-    background-color: var(--rc-color-background-2);
     box-shadow: 0 0 1rem var(--rc-color-shadow-1);
-    border: 2px solid var(--rc-color-border-3);
+    background-color: var(--rc-color-background-2);
+    border: 1px solid var(--rc-color-border-3);
 
     ${({ isOpen }) =>
       isOpen &&
       css`
         visibility: visible;
         opacity: 1;
-        top: 2%;
+        top: 0;
       `}
-
-    @media ${VIEWPORT.MOBILE_MD} {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
   }
 `
 

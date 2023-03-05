@@ -14,7 +14,8 @@ export const StyledWrapper = styled.header`
   border-radius: 0.6rem;
   box-shadow: 0 0 1rem var(--rc-color-shadow-1);
   border: 1px solid var(--rc-color-border-3);
-  background-color: var(--rc-color-background-2);
+  backdrop-filter: blur(2px);
+  background-color: var(--rc-color-background-2-transparent);
 `
 
 export const StyledItem = styled.div`
@@ -23,7 +24,7 @@ export const StyledItem = styled.div`
   justify-content: space-between;
 `
 
-export const StyledLogo = styled.div`
+export const StyledLogoLink = styled.a`
   position: relative;
   display: flex;
   align-items: center;

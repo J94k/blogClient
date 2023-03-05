@@ -41,7 +41,8 @@
   --blue900: '#040E34';
 
   --rc-color-background-1: #eaeaea;
-  --rc-color-background-2: var(--color-white);
+  --rc-color-background-2: rgba(255, 255, 255);
+  --rc-color-background-2-transparent: rgba(255, 255, 255, 0.9);
   --rc-color-background-surface: rgba(255, 255, 255, 0.372);
   --rc-color-text-1: var(--color-gray950);
   --rc-color-text-2: var(--color-gray600);
@@ -74,6 +75,7 @@
 .dark-theme {
   --rc-color-background-1: #090a0c;
   --rc-color-background-2: #1a1a1d;
+  --rc-color-background-2-transparent: rgba(26, 26, 29, 0.9);
   --rc-color-background-surface: rgba(9, 10, 12, 0.715);
 
   --rc-color-text-1: var(--color-white);
