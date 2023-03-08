@@ -39,7 +39,7 @@ export const StyledPrivacy = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 13px;
 `
 
 export const StyledInfo = styled.button`

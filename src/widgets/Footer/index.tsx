@@ -25,25 +25,29 @@ const Footer: FC<Props> = ({ name }) => {
       </StyledCopyright>
       <StyledPrivacy>
         <StyledInfo onClick={showToS}>Условия обслуживания</StyledInfo>
-        <StyledInfo onClick={showPP}>Политика конфиденциальности</StyledInfo>
+        <StyledInfo onClick={showPP}>Конфиденциальность</StyledInfo>
       </StyledPrivacy>
 
       <Modal
         visible={displayToS}
+        maxWidth="40rem"
         title={<>Условия обслуживания</>}
         onClose={hideToS}
         content={<>Нет условий. Мы не обслуживаем.</>}
       />
       <Modal
         visible={displayPP}
+        maxWidth="40rem"
         onClose={hidePP}
         title={<>Политика конфиденциальности</>}
         content={
           <>
-            Нет логов или сбора данных. Не используем cookies. Но возможно
-            хостинг и(или) люди &apos;посередине&apos; собирают какую-то
-            информацию. Также мы не можем отвечать за логи вашего интернет
-            провайдера.
+            Не используем cookies, но есть некоторые метрики для проверки и
+            улучшения работы приложения. К примеру, как быстро загружается
+            главная страница или сколько времени занимают запросы к DNS. Также,
+            возможно, хостинг и(или) люди &apos;посередине&apos; собирают
+            какую-то информацию. И мы не можем отвечать за логи вашего интернет
+            провайдера, конечно.
           </>
         }
       />

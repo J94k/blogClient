@@ -13,12 +13,13 @@ type Props = {
   content: ReactNode
   visible: boolean
   onClose: VoidFunction
+  maxWidth?: string
 }
 
-const Modal: FC<Props> = ({ title, content, visible, onClose }) => {
+const Modal: FC<Props> = ({ title, content, visible, onClose, maxWidth }) => {
   return visible ? (
     <StyledUnderlayer>
-      <StyledModal>
+      <StyledModal maxWidth={maxWidth}>
         <StyledHeader>
           <StyledTitle>{title}</StyledTitle>
           <StyledCloseButton title="закрыть окно" onClick={onClose}>
