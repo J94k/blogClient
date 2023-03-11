@@ -1,5 +1,8 @@
 import mixpanel from 'mixpanel-browser'
 import config from 'config'
+import localData from 'shared/utils/localData'
+
+const domain = localData.getDomain()
 
 const init = () => {
   mixpanel.init(config.ANALYTICS_TOKEN, {
@@ -8,6 +11,8 @@ const init = () => {
 }
 
 const track = (event: string, data: Record<string, unknown>) => {
+  if (domain === 'localhost') return
+
   try {
     mixpanel.track(event, data)
   } catch (error) {

@@ -44,6 +44,13 @@
   --rc-color-background-2: rgba(255, 255, 255);
   --rc-color-background-2-transparent: rgba(255, 255, 255, 0.9);
   --rc-color-background-surface: rgba(255, 255, 255, 0.372);
+  --rc-color-background-brand-1: #869eff;
+  --rc-color-background-brand-1-soft: #869eff56;
+  --rc-color-background-brand-2: #7acc97;
+  --rc-color-background-brand-2-soft: #7acc9756;
+  --rc-color-background-brand-3: #dbbc19;
+  --rc-color-background-brand-3-soft: #dbbc1956;
+
   --rc-color-text-1: var(--color-gray950);
   --rc-color-text-2: var(--color-gray600);
   --rc-color-text-3: var(--color-green700);
@@ -77,6 +84,12 @@
   --rc-color-background-2: #1a1a1d;
   --rc-color-background-2-transparent: rgba(26, 26, 29, 0.9);
   --rc-color-background-surface: rgba(9, 10, 12, 0.715);
+  --rc-color-background-brand-1: #869eff;
+  --rc-color-background-brand-1-soft: #869eff56;
+  --rc-color-background-brand-2: #7acc97;
+  --rc-color-background-brand-2-soft: #7acc9756;
+  --rc-color-background-brand-3: #dbbc19;
+  --rc-color-background-brand-3-soft: #dbbc1956;
 
   --rc-color-text-1: var(--color-white);
   --rc-color-text-2: var(--color-gray600);

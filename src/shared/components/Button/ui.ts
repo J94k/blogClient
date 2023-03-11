@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
   background-color: transparent;
   letter-spacing: 1.6px;
   transition: 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     color: var(--rc-color-button-background-1-hover);

@@ -2,6 +2,11 @@ import { marked } from 'marked'
 import DOMPurify from 'dompurify'
 import { log } from 'shared/utils/log'
 
+marked.setOptions({
+  silent: import.meta.env.PROD,
+  smartypants: true,
+})
+
 const parseMarkdownToHtml = (markdown: string): string => {
   if (!markdown) return ''
 
