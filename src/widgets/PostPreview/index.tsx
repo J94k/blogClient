@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import AuthorLabel from 'shared/components/AuthorLabel'
 import DateLabel from 'shared/components/DateLabel'
 import TagsBlock from 'shared/components/TagsBlock'
 import { msToLocalDate } from 'shared/utils/date'
@@ -20,7 +19,6 @@ const PostPreview: FC<
   postId,
   title,
   description,
-  author,
   date,
   onContinue,
   tags,
@@ -42,7 +40,6 @@ const PostPreview: FC<
         </StyledButtonContinue>
         <StyledMetadata>
           <div>
-            <AuthorLabel>{author}</AuthorLabel>{' '}
             <DateLabel>{localDate}</DateLabel>
           </div>
         </StyledMetadata>

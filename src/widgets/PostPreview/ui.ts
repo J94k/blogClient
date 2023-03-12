@@ -3,7 +3,7 @@ import { VIEWPORT } from 'shared/ui/mixins/viewport'
 import { ButtonContinue } from 'shared/components/Button'
 
 export const StyledPostPreview = styled.section`
-  padding: 1rem;
+  padding: 20px;
   border-radius: 0.6rem;
   border: 1px solid var(--rc-color-border-2);
   background-color: var(--rc-color-background-2);

@@ -13,8 +13,6 @@ export const StyledAuthor = styled.div`
 
 export const StyledNickname = styled.h3`
   margin: 0;
-  text-shadow: var(--rc-color-button-text-1) 0 0 0.5rem;
-  color: var(--rc-color-button-text-1);
 `
 
 export const StyledStory = styled.p`

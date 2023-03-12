@@ -52,11 +52,8 @@
   --rc-color-background-brand-3-soft: #dbbc1956;
 
   --rc-color-text-1: var(--color-gray950);
-  --rc-color-text-2: var(--color-gray600);
-  --rc-color-text-3: var(--color-green700);
-  --rc-color-text-4: var(--color-gray600);
-  --rc-color-text-4-hover: var(--color-gray400);
-  --rc-color-secondary: rgba(0, 0, 0, 0.7);
+  --rc-color-primary: #090b0e;
+  --rc-color-secondary: rgba(0, 0, 0, 0.6);
 
   --rc-color-shadow-1: #dddfe4;
   --rc-color-border-1: var(--color-gray200);
@@ -66,17 +63,8 @@
   --rc-color-link-1: #1d4294;
   --rc-color-link-1-hover: #1267d69b;
 
-  --rc-color-button-text-1: var(--color-green800);
-  --rc-color-button-text-1-hover: var(--color-green600);
-  --rc-color-button-text-2: #7acc97;
-  --rc-color-button-text-2-hover: #499f67;
-
   --rc-color-button-background-1: #c6cce2;
   --rc-color-button-background-1-hover: #7a8fda;
-  --rc-color-button-background-2: var(--color-green400);
-  --rc-color-button-background-2-hover: var(--color-green400-transparent);
-  --rc-color-button-background-3: #e0f3e4;
-  --rc-color-button-background-3-hover: #aad7b4;
 }
 
 .dark-theme {
@@ -92,10 +80,7 @@
   --rc-color-background-brand-3-soft: #dbbc1956;
 
   --rc-color-text-1: var(--color-white);
-  --rc-color-text-2: var(--color-gray600);
-  --rc-color-text-3: var(--color-green500);
-  --rc-color-text-4: var(--color-gray400);
-  --rc-color-text-4-hover: var(--color-gray200);
+  --rc-color-primary: #f6f6f6;
   --rc-color-secondary: rgba(255, 255, 255, 0.6);
 
   --rc-color-shadow-1: #0c0e12;
@@ -106,15 +91,6 @@
   --rc-color-link-1: #869eff;
   --rc-color-link-1-hover: #adbcffa7;
 
-  --rc-color-button-text-1: var(--color-green500);
-  --rc-color-button-text-1-hover: var(--color-green300);
-  --rc-color-button-text-2: #2a7d48;
-  --rc-color-button-text-2-hover: #3da061;
-
   --rc-color-button-background-1: #25262a;
   --rc-color-button-background-1-hover: #7a8fda;
-  --rc-color-button-background-2: var(--color-green400);
-  --rc-color-button-background-2-hover: var(--color-green400-transparent);
-  --rc-color-button-background-3: #182d21;
-  --rc-color-button-background-3-hover: #2b4f3b;
 }

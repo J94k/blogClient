@@ -22,9 +22,9 @@ export const StyledWrapper = styled.footer`
     background: linear-gradient(
       90deg,
       transparent,
-      var(--rc-color-button-background-2-hover) 22%,
-      var(--rc-color-button-background-2) 50%,
-      var(--rc-color-button-background-2-hover) 78%,
+      var(--rc-color-background-brand-1-soft) 22%,
+      var(--rc-color-background-brand-2) 50%,
+      var(--rc-color-background-brand-3-soft) 78%,
       transparent
     );
   }

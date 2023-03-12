@@ -2,7 +2,7 @@ import 'shared/services/localMetrics'
 import 'shared/services/analytics'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Bootstrap from 'app/Bootstrap'
 import App from 'app'
 import store from 'app/store'
@@ -12,7 +12,7 @@ import About from 'pages/About'
 import Post from 'pages/Post'
 import ErrorBoundary from 'shared/components/ErrorBoundary'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <App store={store} />,
