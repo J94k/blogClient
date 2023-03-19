@@ -15,7 +15,7 @@ export const StyledTitle = styled.h2`
 `
 
 export const StyledDescription = styled.p`
-  color: var(--rc-color-secondary);
+  color: var(--rc-color-secondary-soft);
   margin: 0;
   padding-top: 12px;
 `

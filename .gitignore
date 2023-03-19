@@ -1,10 +1,12 @@
 node_modules
 dist
+sandworm
+
 *-lock.yaml
 *lock.json
 logo_*.svg
 favicon.ico
 .env
-config.json
-
 .env*
+
+config.json

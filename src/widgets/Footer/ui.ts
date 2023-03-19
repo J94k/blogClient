@@ -10,7 +10,7 @@ export const StyledWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--rc-color-secondary);
+  color: var(--rc-color-secondary-soft);
 
   &::after {
     content: '';

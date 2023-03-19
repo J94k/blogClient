@@ -1,3 +1,4 @@
+@import './styles/normalize.css';
 @import './styles/vars.css';
 
 @font-face {
@@ -81,11 +82,30 @@ a:focus {
   color: var(--rc-color-link-1-hover);
 }
 
-@keyframes snowfall {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 110vh, 0);
-  }
+blockquote {
+  position: relative;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 30px;
+  margin-inline-end: 40px;
+  font-style: oblique;
+  color: var(--rc-color-secondary);
+}
+
+blockquote::before,
+blockquote::after {
+  position: absolute;
+  font-size: 38px;
+}
+
+blockquote::before {
+  content: '\201C';
+  left: -0.8em;
+  top: -0.2em;
+}
+
+blockquote::after {
+  content: '\201D';
+  right: -0.7em;
+  bottom: -0.4em;
 }

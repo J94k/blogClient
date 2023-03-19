@@ -5,6 +5,7 @@ import { log } from 'shared/utils/log'
 marked.setOptions({
   silent: import.meta.env.PROD,
   smartypants: true,
+  headerIds: false,
 })
 
 const parseMarkdownToHtml = (markdown: string): string => {

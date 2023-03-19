@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 import { FC, useState, useMemo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { observer } from 'mobx-react-lite'
 import config from 'config'
 import store from 'app/store'
@@ -117,6 +118,10 @@ const Blog: FC<Props> = ({ authors, pages, isPending, currentPage }) => {
 
   return (
     <StyledWrapper>
+      <Helmet>
+        <title>Ratcloud блог</title>
+      </Helmet>
+
       {isPending ? (
         <div>Загрузка...</div>
       ) : (

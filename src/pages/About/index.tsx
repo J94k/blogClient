@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import { Helmet } from 'react-helmet-async'
 import config from 'config'
 import { LinkEmail } from 'shared/components/Link'
 import { StyledWrapper, StyledSocialBlock } from './ui'
@@ -6,6 +7,9 @@ import { StyledWrapper, StyledSocialBlock } from './ui'
 const About = (): ReactElement => {
   return (
     <StyledWrapper>
+      <Helmet>
+        <title>Что такое Ratcloud и о чем этот сайт?</title>
+      </Helmet>
       <h2>Что за место и зачем?</h2>
       <p>
         Место, которое появилось и, надеюсь, продолжит существовать для

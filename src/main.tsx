@@ -3,6 +3,7 @@ import 'shared/services/analytics'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import Bootstrap from 'app/Bootstrap'
 import App from 'app'
 import store from 'app/store'
@@ -41,6 +42,8 @@ const router = createHashRouter([
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <Bootstrap />
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>
 )

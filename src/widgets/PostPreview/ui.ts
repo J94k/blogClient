@@ -27,7 +27,7 @@ export const StyledDescription = styled.p`
   margin: 0;
   padding: 0.7rem 0;
   font-size: 1.1rem;
-  color: var(--rc-color-secondary);
+  color: var(--rc-color-secondary-soft);
 
   @media ${VIEWPORT.MOBILE} {
     font-size: 1rem;
@@ -51,7 +51,7 @@ export const StyledButtonContinue = styled(ButtonContinue)`
 `
 
 export const StyledMetadata = styled.div`
-  color: var(--rc-color-secondary);
+  color: var(--rc-color-secondary-soft);
 
   @media ${VIEWPORT.MOBILE} {
     margin-top: 1rem;
