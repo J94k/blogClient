@@ -12,7 +12,7 @@ const get = <T>(key: string): T | undefined => {
   try {
     const v = localStorage.getItem(key)
 
-    if (v) return JSON.parse(v)
+    if (v) return JSON.parse(v) as T | undefined
   } catch (error) {
     console.error(error)
   }
