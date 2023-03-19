@@ -23,7 +23,7 @@ const Bootstrap: FC = () => {
 
       try {
         const tags = await blogService.fetchTags()
- 
+
         store.setTags(tags)
       } catch (error) {
         log('Error while fetching tags', error)
