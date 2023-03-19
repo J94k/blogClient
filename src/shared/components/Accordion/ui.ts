@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components'
 
 export const StyledAccordion = styled.div<{ isActive: boolean }>`
   border-radius: 0.6rem;
-  background-color: var(--rc-color-background-2);
-  opacity: 0.7;
 
   ${({ isActive }) =>
     isActive &&
@@ -21,38 +19,49 @@ export const StyledButton = styled.button<{ isActive: boolean }>`
   justify-content: space-between;
   background-color: transparent;
   border-radius: inherit;
-  border: none;
+  border: 2px solid transparent;
+  background-color: var(--rc-color-background-2);
+  transition: 120ms;
 
-  &:hover {
-    background-color: var(--rc-color-button-background-1);
+  :hover {
+    border-color: var(--rc-color-background-brand-1);
   }
+  ${({ isActive }) =>
+    isActive && 'border-color: var(--rc-color-background-brand-1);'}
 
-  &::after {
+  ::after {
     position: absolute;
     content: '';
     right: 1rem;
-    top: 50%;
-    transform: translateY(-50%) rotateZ(135deg);
+    top: 35%;
+    transform: rotateZ(135deg);
     width: 0.5rem;
     height: 0.5rem;
-    border-top: 2px solid var(--rc-color-button-text-1);
-    border-right: 2px solid var(--rc-color-button-text-1);
-  }
-
-  &:hover::after {
-    border-color: var(--rc-color-button-text-1-hover);
+    border-right: 2px solid var(--rc-color-primary);
+    border-top: 2px solid var(--rc-color-primary);
   }
 
   ${({ isActive }) =>
     isActive &&
     css`
       &::after {
-        transform: translateY(-50%) rotateZ(-45deg);
+        top: 45%;
+        transform: rotateZ(-45deg);
       }
     `}
 `
 
-export const StyledContent = styled.div`
-  padding: 0.7rem;
-  margin-top: 1rem;
+export const StyledContent = styled.div<{ isVisible: boolean }>`
+  margin-top: 8px;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+
+  ${({ isVisible }) =>
+    isVisible &&
+    css`
+      position: relative;
+      visibility: visible;
+      opacity: 1;
+    `}
 `

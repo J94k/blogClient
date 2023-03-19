@@ -21,15 +21,15 @@ const fetchAuthors = async (): Promise<Store.Author[]> => {
     method: 'GET',
   }).then((res) => res.json())
 
-  return authors
+  return authors as Store.Author[]
 }
 
-const fetchTags = async (): Promise<Store.Author[]> => {
-  const authors = await fetch(`${config.BLOG_SERVICE_URL}/tags`, {
+const fetchTags = async (): Promise<string[]> => {
+  const tags = await fetch(`${config.BLOG_SERVICE_URL}/tags`, {
     method: 'GET',
   }).then((res) => res.json())
 
-  return authors
+  return tags as string[]
 }
 
 export default {

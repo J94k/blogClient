@@ -4,13 +4,13 @@ import Button from 'shared/components/Button'
 import { StyledPost, StyledFooter } from './ui'
 
 type Props = {
-  post: string
+  postContent: string
 }
 
-const Post: FC<Props> = ({ post }) => {
+const Post: FC<Props> = ({ postContent }) => {
   const goBack = () => window.history.back()
 
-  const readableContent = parsingService.parseMarkdownToHtml(post)
+  const readableContent = parsingService.parseMarkdownToHtml(postContent)
 
   return (
     <StyledPost>

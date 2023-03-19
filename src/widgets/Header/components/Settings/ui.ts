@@ -17,7 +17,7 @@ export const StyledToggle = styled.button`
 
   &:hover {
     // change icon color
-    --rc-color-secondary: var(--rc-color-link-1);
+    --rc-color-secondary-soft: var(--rc-color-link-1);
   }
 `
 

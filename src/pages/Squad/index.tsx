@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { observer } from 'mobx-react-lite'
 import store from 'app/store'
 import Author from 'widgets/Author'
@@ -9,7 +10,10 @@ const Squad: FC = () => {
 
   return (
     <StyledWrapper>
-      <StyledTitle>Кто в команде</StyledTitle>
+      <Helmet>
+        <title>Кто в Ratcloud команде?</title>
+      </Helmet>
+      <StyledTitle>Кто в команде?</StyledTitle>
 
       <StyledSquad>
         {authors.map(({ nickname, story }, i) => (

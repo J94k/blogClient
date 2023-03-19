@@ -14,6 +14,6 @@ export const StyledTag = styled.button`
   color: var(--rc-color-link-1);
 
   :not(:last-child) {
-    margin-right: 6px;
+    margin-right: 10px;
   }
 `

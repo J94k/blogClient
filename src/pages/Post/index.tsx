@@ -30,7 +30,7 @@ const Post: FC<Props> = ({ id }) => {
 
   return (
     <StyledWrapper>
-      {tmpPost ? <PostWidget post={tmpPost} /> : 'Загрузка...'}
+      {tmpPost ? <PostWidget postContent={tmpPost} /> : 'Загрузка...'}
     </StyledWrapper>
   )
 }

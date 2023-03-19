@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { VIEWPORT } from 'shared/ui/mixins/viewport'
 
 export const StyledUnderlayer = styled.div`
   position: fixed;
@@ -10,17 +11,27 @@ export const StyledUnderlayer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--rc-color-background-1);
+  background-color: var(--rc-color-background-2-transparent);
+
+  @media ${VIEWPORT.MOBILE} {
+    align-items: flex-end;
+    padding-bottom: 4%;
+  }
 `
 
-export const StyledModal = styled.div`
-  max-width: 50rem;
+export const StyledModal = styled.div<{ maxWidth?: string }>`
+  max-width: ${({ maxWidth }) => maxWidth || '50rem'};
+  width: 94vw;
   padding: 2rem;
   border-radius: 0.6rem;
   border: 1px solid var(--rc-color-border-3);
   font-family: Old-Soviet;
   background-color: var(--rc-color-background-2);
   color: var(--rc-color-text-1);
+
+  @media ${VIEWPORT.MOBILE} {
+    min-height: 240px;
+  }
 `
 
 export const StyledHeader = styled.div`

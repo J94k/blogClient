@@ -1,10 +1,15 @@
 import { FC, useEffect } from 'react'
 import { log } from 'shared/utils/log'
+import analytics from 'shared/services/analytics'
 import blogService from 'shared/services/blogService'
 import store from './store'
 
 const Bootstrap: FC = () => {
   useEffect(() => {
+    analytics.track('Initialization is fine', {
+      when: 'Bootstrap process',
+    })
+
     const fetchMainData = async () => {
       store.setPostsPending(true)
 
@@ -18,7 +23,7 @@ const Bootstrap: FC = () => {
 
       try {
         const tags = await blogService.fetchTags()
-        // @ts-ignore
+
         store.setTags(tags)
       } catch (error) {
         log('Error while fetching tags', error)

@@ -16,8 +16,7 @@ const Accordion: FC<Props> = ({ title, content }) => {
       <StyledButton isActive={isVisible} onClick={toggleContentVisibility}>
         {title}
       </StyledButton>
-
-      {isVisible && <StyledContent>{content}</StyledContent>}
+      <StyledContent isVisible={isVisible}>{content}</StyledContent>
     </StyledAccordion>
   )
 }

@@ -22,5 +22,28 @@ export const StyledHeader = styled.div`
 `
 
 export const StyledMain = styled.main`
+  position: relative;
   margin-bottom: 32px;
+
+  ::before {
+    position: fixed;
+    z-index: -1;
+    content: '';
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 800px;
+    border-radius: 50%;
+    opacity: 0.15;
+    mix-blend-mode: normal;
+    filter: blur(80px);
+    will-change: filter;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      var(--rc-color-background-brand-3) 0deg,
+      var(--rc-color-background-brand-2) 180deg,
+      var(--rc-color-background-brand-1) 1turn
+    );
+  }
 `

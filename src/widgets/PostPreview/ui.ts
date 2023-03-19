@@ -3,7 +3,7 @@ import { VIEWPORT } from 'shared/ui/mixins/viewport'
 import { ButtonContinue } from 'shared/components/Button'
 
 export const StyledPostPreview = styled.section`
-  padding: 1rem;
+  padding: 20px;
   border-radius: 0.6rem;
   border: 1px solid var(--rc-color-border-2);
   background-color: var(--rc-color-background-2);
@@ -27,7 +27,7 @@ export const StyledDescription = styled.p`
   margin: 0;
   padding: 0.7rem 0;
   font-size: 1.1rem;
-  color: var(--rc-color-secondary);
+  color: var(--rc-color-secondary-soft);
 
   @media ${VIEWPORT.MOBILE} {
     font-size: 1rem;
@@ -51,7 +51,7 @@ export const StyledButtonContinue = styled(ButtonContinue)`
 `
 
 export const StyledMetadata = styled.div`
-  color: var(--rc-color-secondary);
+  color: var(--rc-color-secondary-soft);
 
   @media ${VIEWPORT.MOBILE} {
     margin-top: 1rem;

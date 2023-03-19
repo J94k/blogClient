@@ -10,7 +10,7 @@ export const StyledWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--rc-color-secondary);
+  color: var(--rc-color-secondary-soft);
 
   &::after {
     content: '';
@@ -22,9 +22,9 @@ export const StyledWrapper = styled.footer`
     background: linear-gradient(
       90deg,
       transparent,
-      var(--rc-color-button-background-2-hover) 22%,
-      var(--rc-color-button-background-2) 50%,
-      var(--rc-color-button-background-2-hover) 78%,
+      var(--rc-color-background-brand-1-soft) 22%,
+      var(--rc-color-background-brand-2) 50%,
+      var(--rc-color-background-brand-3-soft) 78%,
       transparent
     );
   }
@@ -39,7 +39,7 @@ export const StyledPrivacy = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
 `
 
 export const StyledInfo = styled.button`

@@ -5,7 +5,6 @@ export const StyledWrapper = styled.div`
   flex-direction: column;
   border: 1px solid transparent;
   border-radius: 0.4rem;
-  color: var(--rc-color-text-4);
   background-color: transparent;
   outline: none;
   transition: 0.1s;
