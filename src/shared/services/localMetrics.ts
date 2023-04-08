@@ -44,7 +44,7 @@ const trackWithLimits = (info: TrackInformation) => {
   }
 }
 
-const perfume = new Perfume({
+export default new Perfume({
   analyticsTracker(options) {
     const { metricName, data, rating } = options
 
@@ -83,7 +83,3 @@ const perfume = new Perfume({
     }
   },
 })
-
-export default {
-  perfume,
-}

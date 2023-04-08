@@ -10,7 +10,7 @@
     <meta name="color-scheme" content="light dark" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline' api.ratcloud.org ratcloud.org api-js.mixpanel.com"
+      content="script-src 'self' 'unsafe-inline' api.ratcloud.org ratcloud.org api-js.mixpanel.com static.cloudflareinsights.com"
     />
     <title>Ratcloud</title>
     <meta name="description" content="Персональный сайт Ratcloud. Темы: программирование, разработка, психология, новости, книги, саморазвитие.">
@@ -51,5 +51,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7fa7252ed7a640dda33653f26b7196b4"}'></script>
   </body>
 </html>
