@@ -20,8 +20,8 @@ export const StyledButton = styled.button<{ isActive: boolean }>`
   background-color: transparent;
   border-radius: inherit;
   border: 2px solid transparent;
-  background-color: var(--rc-color-background-2);
-  transition: 120ms;
+  background-color: var(--background);
+  transition: var(--animation-duration);
 
   :hover {
     border-color: var(--rc-color-background-brand-1);
@@ -37,8 +37,8 @@ export const StyledButton = styled.button<{ isActive: boolean }>`
     transform: rotateZ(135deg);
     width: 0.5rem;
     height: 0.5rem;
-    border-right: 2px solid var(--rc-color-primary);
-    border-top: 2px solid var(--rc-color-primary);
+    border-right: 2px solid var(--text-bright);
+    border-top: 2px solid var(--text-bright);
   }
 
   ${({ isActive }) =>

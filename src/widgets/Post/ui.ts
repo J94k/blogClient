@@ -13,7 +13,7 @@ export const StyledDescription = styled.blockquote`
   margin: 0;
   padding: 0.6rem 0.9rem 0.6rem 1.4rem;
   border-radius: 0.5rem;
-  background-color: var(--rc-color-background-1);
+  background-color: var(--background-body);
 
   &::before {
     content: '';
@@ -23,7 +23,7 @@ export const StyledDescription = styled.blockquote`
     transform: translateY(-50%);
     width: 8px;
     height: 100%;
-    background-color: var(--rc-color-border-3);
+    background-color: var(--border);
     border-radius: 1rem;
   }
 `

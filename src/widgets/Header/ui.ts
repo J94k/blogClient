@@ -12,10 +12,10 @@ export const StyledWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   border-radius: 0.6rem;
-  box-shadow: 0 0 1rem var(--rc-color-shadow-1);
-  border: 1px solid var(--rc-color-border-3);
+  box-shadow: 0 0 1rem var(--color-shadow-1);
+  border: 1px solid var(--border);
   backdrop-filter: blur(2px);
-  background-color: var(--rc-color-background-2-transparent);
+  background-color: var(--background-soft);
 `
 
 export const StyledItem = styled.div`
@@ -49,7 +49,7 @@ export const StyledTitle = styled.h2`
   font-size: 2.3rem;
   font-family: 'ArgosGeorge';
   letter-spacing: 0.1rem;
-  color: var(--rc-color-text-1);
+  color: var(--text-bright);
   opacity: 0.9;
 
   @media ${VIEWPORT.MOBILE} {

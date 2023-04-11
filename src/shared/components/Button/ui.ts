@@ -2,18 +2,18 @@ import styled, { css } from 'styled-components'
 
 export const StyledButton = styled.button`
   padding: 0.5rem 0.8rem;
-  border: 2px solid var(--rc-color-border-3);
+  border: 2px solid var(--border);
   border-radius: 0.3rem;
   color: var(--rc-color-button-text-3);
   background-color: transparent;
   letter-spacing: 1.6px;
-  transition: 0.1s;
+  transition: var(--animation-duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color: var(--rc-color-button-background-1-hover);
-    border-color: var(--rc-color-button-background-1-hover);
-    box-shadow: 0 4px 8px var(--rc-color-shadow-1);
+    color: var(--rc-color-background-brand-1-soft);
+    border-color: var(--rc-color-background-brand-1-soft);
+    box-shadow: 0 4px 8px var(--color-shadow-1);
   }
 `
 
@@ -31,11 +31,11 @@ export const StyledButtonContinue = styled(StyledButton)`
     height: 0.5rem;
     border-top: 2px solid;
     border-right: 2px solid;
-    border-color: var(--rc-color-border-1);
+    border-color: var(--border);
   }
 
   &:hover::after {
-    border-color: var(--rc-color-button-background-1-hover);
+    border-color: var(--rc-color-background-brand-1-soft);
   }
 `
 
@@ -55,11 +55,11 @@ export const StyledButtonArrow = styled(StyledButton)<{
     height: 0.5rem;
     border-top: 2px solid;
     border-right: 2px solid;
-    border-color: var(--rc-color-border-1);
+    border-color: var(--border);
   }
 
   &:hover::after {
-    border-color: var(--rc-color-button-background-1-hover);
+    border-color: var(--rc-color-background-brand-1-soft);
   }
 
   ${({ direction }) => {

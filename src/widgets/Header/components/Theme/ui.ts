@@ -7,7 +7,7 @@ export const StyledWrapper = styled.div`
   border-radius: 0.4rem;
   background-color: transparent;
   outline: none;
-  transition: 0.1s;
+  transition: var(--animation-duration);
 `
 
 export const StyledOption = styled.button`
@@ -20,12 +20,12 @@ export const StyledOption = styled.button`
   justify-content: space-between;
   border: none;
   background: inherit;
-  transition: 0.1s;
+  transition: var(--animation-duration);
 
   &:hover,
   &:focus {
-    color: var(--rc-color-link-1);
-    background-color: var(--rc-color-background-1);
+    color: var(--links);
+    background-color: var(--background-body);
   }
 
   .label {

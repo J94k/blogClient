@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const StyledAuthor = styled.div`
   padding: 0.7rem;
   border-radius: 0.6rem;
-  border: 1px solid var(--rc-color-border-2);
-  background-color: var(--rc-color-background-2);
+  border: 1px solid var(--border);
+  background-color: var(--background);
 
   &:not(:last-child) {
     margin-bottom: 0.6rem;

@@ -1,98 +1,79 @@
 :root {
   --rc-max-width-content: 60rem;
 
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-light50: #f6f6f6;
-  --color-light100: #eaeaea;
-  --color-light200: #cfcfcf;
-  --color-dark0: #090b0e;
-  --color-dark50: #13171d;
-  --color-dark100: #0c0f13;
-  --color-dark200: #272a31;
-  --color-gray50: #f5f6fc;
-  --color-gray100: #e8ecfb;
-  --color-gray150: #d8dae1;
-  --color-gray200: #b8c0dc;
-  --color-gray250: #a6afca;
-  --color-gray300: #98a1c0;
-  --color-gray350: #888fab;
-  --color-gray400: #7780a0;
-  --color-gray450: #6b7594;
-  --color-gray500: #5d6785;
-  --color-gray550: #505a78;
-  --color-gray600: #404a67;
-  --color-gray650: #333d59;
-  --color-gray700: #293249;
-  --color-gray750: #1b1d23;
-  --color-gray800: #131a2a;
-  --color-gray850: #0e1524;
-  --color-gray900: #0d111c;
-  --color-gray950: #080b11;
-  --blue50: '#EDEFF8';
-  --blue100: '#DEE1FF';
-  --blue200: '#ADBCFF';
-  --blue300: '#869EFF';
-  --blue400: '#4C82FB';
-  --blue500: '#1267D6';
-  --blue600: '#1D4294';
-  --blue700: '#09265E';
-  --blue800: '#0B193F';
-  --blue900: '#040E34';
-
-  --rc-color-background-1: #eaeaea;
-  --rc-color-background-2: rgba(255, 255, 255);
-  --rc-color-background-2-transparent: rgba(255, 255, 255, 0.9);
-  --rc-color-background-surface: rgba(255, 255, 255, 0.372);
+  --background-body: #f3f3f3;
+  --background: #f9f9f9;
+  --background-soft: rgba(249, 249, 249, 0.9);
+  --background-alt: #f7f7f7;
+  --selection: #9e9e9e;
+  --text-main: #363636;
+  --text-bright: #090b0e;
+  --text-muted: rgba(0, 0, 0, 0.72);
+  --text-muted-soft: rgba(0, 0, 0, 0.6);
+  --links: #1d4294;
+  --links-hover: #1267d69b;
+  --focus: #0096bfab;
+  --border: #cfcfcf;
+  --code: #212123;
+  --animation-duration: 0.1s;
+  --button-base: #d0cfcf;
+  --button-hover: #9b9b9b;
+  --scrollbar-thumb: color-mod(var(--button-hover) lightness(+6%));
+  --scrollbar-thumb-hover: var(--button-hover);
+  --form-placeholder: #949494;
+  --form-text: #1d1d1d;
+  --variable: #39a33c;
+  --highlight: #ff0;
+  --color-shadow-1: #e5e5e6;
+  --select-arrow: svg-load(
+    '../shared/assets/images/selectArrow.svg',
+    fill: #161f27
+  );
+  /*
+  --background-soft
+  */
   --rc-color-background-brand-1: #869eff;
   --rc-color-background-brand-1-soft: #869eff56;
   --rc-color-background-brand-2: #7acc97;
   --rc-color-background-brand-2-soft: #7acc9756;
   --rc-color-background-brand-3: #dbbc19;
   --rc-color-background-brand-3-soft: #dbbc1956;
-
-  --rc-color-text-1: var(--color-gray950);
-  --rc-color-primary: #090b0e;
-  --rc-color-secondary: rgba(0, 0, 0, 0.75);
-  --rc-color-secondary-soft: rgba(0, 0, 0, 0.6);
-
-  --rc-color-shadow-1: #dddfe4;
-  --rc-color-border-1: var(--color-gray200);
-  --rc-color-border-2: var(--color-light100);
-  --rc-color-border-3: var(--color-light200);
-
-  --rc-color-link-1: #1d4294;
-  --rc-color-link-1-hover: #1267d69b;
-
-  --rc-color-button-background-1: #c6cce2;
-  --rc-color-button-background-1-hover: #7a8fda;
 }
 
 .dark-theme {
-  --rc-color-background-1: #090a0c;
-  --rc-color-background-2: #1a1a1d;
-  --rc-color-background-2-transparent: rgba(26, 26, 29, 0.9);
-  --rc-color-background-surface: rgba(9, 10, 12, 0.715);
+  --background-body: #1a1a1d;
+  --background: #1f1f22;
+  --background-soft: rgba(31, 31, 34, 0.9);
+  --background-alt: #1a242f;
+  --selection: #1c76c5;
+  --text-main: #dbdbdb;
+  --text-bright: #f6f6f6;
+  --text-muted: #a9b1ba;
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --text-muted-soft: rgba(255, 255, 255, 0.6);
+  --links: #869eff;
+  --links-hover: #adbcffa7;
+  --focus: #0096bfab;
+  --border: #272a31;
+  --code: #ffbe85;
+  --animation-duration: 0.1s;
+  --button-base: #0c151c;
+  --button-hover: #040a0f;
+  --scrollbar-thumb: var(--button-hover);
+  --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%));
+  --form-placeholder: #a9a9a9;
+  --form-text: #fff;
+  --variable: #d941e2;
+  --highlight: #efdb43;
+  --color-shadow-1: #0c0e12;
+  --select-arrow: svg-load(
+    '../shared/assets/images/selectArrow.svg',
+    fill: #efefef
+  );
   --rc-color-background-brand-1: #869eff;
   --rc-color-background-brand-1-soft: #869eff56;
   --rc-color-background-brand-2: #7acc97;
   --rc-color-background-brand-2-soft: #7acc9756;
   --rc-color-background-brand-3: #dbbc19;
   --rc-color-background-brand-3-soft: #dbbc1956;
-
-  --rc-color-text-1: var(--color-white);
-  --rc-color-primary: #f6f6f6;
-  --rc-color-secondary: rgba(255, 255, 255, 0.75);
-  --rc-color-secondary-soft: rgba(255, 255, 255, 0.6);
-
-  --rc-color-shadow-1: #0c0e12;
-  --rc-color-border-1: var(--color-gray200);
-  --rc-color-border-2: var(--color-dark100);
-  --rc-color-border-3: var(--color-dark200);
-
-  --rc-color-link-1: #869eff;
-  --rc-color-link-1-hover: #adbcffa7;
-
-  --rc-color-button-background-1: #25262a;
-  --rc-color-button-background-1-hover: #7a8fda;
 }
