@@ -26,20 +26,20 @@ export const StyledPageItem = styled.li<{ active: boolean }>`
   &:hover,
   &:focus {
     ${({ active }) =>
-      !active && 'background-color: var(--rc-color-background-brand-1-soft);'}
+      !active && 'background-color: var(--brand-soft);'}
   }
 
   ${({ active }) =>
     active &&
     css`
       cursor: unset;
-      color: var(--rc-color-background-brand-1-soft);
-      border-color: var(--rc-color-background-brand-1-soft);
+      color: var(--brand-soft);
+      border-color: var(--brand-soft);
 
       &:hover,
       &:focus {
-        color: var(--rc-color-background-brand-1-soft);
-        border-color: var(--rc-color-background-brand-1-soft);
+        color: var(--brand-soft);
+        border-color: var(--brand-soft);
       }
     `}
 `

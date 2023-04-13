@@ -11,8 +11,8 @@ export const StyledButton = styled.button`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color: var(--rc-color-background-brand-1-soft);
-    border-color: var(--rc-color-background-brand-1-soft);
+    color: var(--brand-soft);
+    border-color: var(--brand-soft);
     box-shadow: 0 4px 8px var(--color-shadow-1);
   }
 `
@@ -35,7 +35,7 @@ export const StyledButtonContinue = styled(StyledButton)`
   }
 
   &:hover::after {
-    border-color: var(--rc-color-background-brand-1-soft);
+    border-color: var(--brand-soft);
   }
 `
 
@@ -59,7 +59,7 @@ export const StyledButtonArrow = styled(StyledButton)<{
   }
 
   &:hover::after {
-    border-color: var(--rc-color-background-brand-1-soft);
+    border-color: var(--brand-soft);
   }
 
   ${({ direction }) => {

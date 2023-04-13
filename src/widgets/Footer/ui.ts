@@ -18,13 +18,13 @@ export const StyledWrapper = styled.footer`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 0.3rem;
+    height: 0.2rem;
     background: linear-gradient(
       90deg,
       transparent,
-      var(--rc-color-background-brand-1-soft) 22%,
-      var(--rc-color-background-brand-2) 50%,
-      var(--rc-color-background-brand-3-soft) 78%,
+      var(--brand-soft) 22%,
+      var(--brand) 50%,
+      var(--brand-soft) 78%,
       transparent
     );
   }

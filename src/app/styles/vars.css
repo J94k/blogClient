@@ -10,8 +10,8 @@
   --text-bright: #090b0e;
   --text-muted: rgba(0, 0, 0, 0.72);
   --text-muted-soft: rgba(0, 0, 0, 0.6);
-  --links: #1d4294;
-  --links-hover: #1267d69b;
+  --links: #95520b;
+  --links-hover: #95520b56;
   --focus: #0096bfab;
   --border: #cfcfcf;
   --code: #212123;
@@ -29,15 +29,8 @@
     '../shared/assets/images/selectArrow.svg',
     fill: #161f27
   );
-  /*
-  --background-soft
-  */
-  --rc-color-background-brand-1: #869eff;
-  --rc-color-background-brand-1-soft: #869eff56;
-  --rc-color-background-brand-2: #7acc97;
-  --rc-color-background-brand-2-soft: #7acc9756;
-  --rc-color-background-brand-3: #dbbc19;
-  --rc-color-background-brand-3-soft: #dbbc1956;
+  --brand: #95520b;
+  --brand-soft: #95520b56;
 }
 
 .dark-theme {
@@ -51,8 +44,8 @@
   --text-muted: #a9b1ba;
   --text-muted: rgba(255, 255, 255, 0.72);
   --text-muted-soft: rgba(255, 255, 255, 0.6);
-  --links: #869eff;
-  --links-hover: #adbcffa7;
+  --links: #db8a19;
+  --links-hover: #db8a1956;
   --focus: #0096bfab;
   --border: #272a31;
   --code: #ffbe85;
@@ -70,10 +63,6 @@
     '../shared/assets/images/selectArrow.svg',
     fill: #efefef
   );
-  --rc-color-background-brand-1: #869eff;
-  --rc-color-background-brand-1-soft: #869eff56;
-  --rc-color-background-brand-2: #7acc97;
-  --rc-color-background-brand-2-soft: #7acc9756;
-  --rc-color-background-brand-3: #dbbc19;
-  --rc-color-background-brand-3-soft: #dbbc1956;
+  --brand: #db8a19;
+  --brand-soft: #db8a1956;
 }

@@ -7,7 +7,7 @@ export const StyledWrapper = styled.nav`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items; center;
+    align-items: center;
     list-style: none;
   }
 
@@ -83,14 +83,9 @@ export const StyledMenuWrapper = styled.div<{ isOpen: boolean }>`
 
 export const StyledRouteLink = styled.span`
   font-size: 18px;
-  color: var(--links);
 
   @media ${VIEWPORT.MOBILE_MD} {
     font-size: 22px;
-  }
-
-  :hover {
-    color: var(--links-hover);
   }
 `
 
