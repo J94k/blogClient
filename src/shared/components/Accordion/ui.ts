@@ -1,33 +1,36 @@
 import styled, { css } from 'styled-components'
 
 export const StyledAccordion = styled.div<{ isActive: boolean }>`
-  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--background);
 
   ${({ isActive }) =>
     isActive &&
     css`
-      opacity: 1;
+      border-color: var(--brand-soft);
     `}
 `
 
 export const StyledButton = styled.button<{ isActive: boolean }>`
   position: relative;
   width: 100%;
-  padding: 0.7rem;
+  margin: 0;
+  padding: 12px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
   border-radius: inherit;
   border: 2px solid transparent;
-  background-color: var(--rc-color-background-2);
-  transition: 120ms;
+  transition: var(--animation-duration);
 
   :hover {
-    border-color: var(--rc-color-background-brand-1);
+    background-color: var(--brand-soft);
   }
-  ${({ isActive }) =>
-    isActive && 'border-color: var(--rc-color-background-brand-1);'}
+  ${({ isActive }) => isActive && 'background-color: var(--brand-soft);'}
 
   ::after {
     position: absolute;
@@ -37,8 +40,8 @@ export const StyledButton = styled.button<{ isActive: boolean }>`
     transform: rotateZ(135deg);
     width: 0.5rem;
     height: 0.5rem;
-    border-right: 2px solid var(--rc-color-primary);
-    border-top: 2px solid var(--rc-color-primary);
+    border-right: 2px solid var(--text-bright);
+    border-top: 2px solid var(--text-bright);
   }
 
   ${({ isActive }) =>

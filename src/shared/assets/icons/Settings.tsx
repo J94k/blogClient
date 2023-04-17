@@ -5,7 +5,7 @@ const Settings: FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 70 70"
-      fill="var(--rc-color-secondary)"
+      fill="var(--text-muted)"
       version="1.1"
       xmlSpace="preserve"
     >

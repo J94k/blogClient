@@ -4,16 +4,16 @@ export const StyledLabel = styled.div`
   padding: 0 0.5rem;
   display: inline-flex;
   border-radius: 0.7rem;
-  border: 2px solid var(--rc-color-border-3);
+  border: 2px solid var(--border);
   transform: rotate(-6deg);
-  box-shadow: inset 0 0 1rem var(--rc-color-link-1), 0 0 7px var(--rc-color-link-1),
-    0 0 1rem var(--rc-color-link-1), 0 0 1rem var(--rc-color-link-1);
+  box-shadow: inset 0 0 1rem var(--links), 0 0 7px var(--links),
+    0 0 1rem var(--links), 0 0 1rem var(--links);
   opacity: 0.7;
 `
 
 export const StyledWrapper = styled.span`
   letter-spacing: 0.2rem;
-  color: var(--rc-color-text-1);
+  color: var(--text-bright);
 `
 
 export const StyledLetter = styled.span`

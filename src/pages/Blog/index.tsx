@@ -84,12 +84,17 @@ const Blog: FC<Props> = ({ authors, pages, isPending, currentPage }) => {
       }
 
       if (filtrationState.date) {
-        updated = filterByObjectKey<Post.Preview>({
-          list: [...updated],
-          key: 'date',
-          valueFormatter: (v: unknown) => msToLocalDate(v as string),
-          target: filtrationState.date.replace(/-/g, '.'),
-        })
+        // @todo shit, make it more stable
+        const dateTokens = filtrationState.date.match(/\d{2,4}/g)
+
+        if (dateTokens) {
+          updated = filterByObjectKey<Post.Preview>({
+            list: [...updated],
+            key: 'date',
+            valueFormatter: (v: unknown) => msToLocalDate(v as string),
+            target: `${dateTokens[1]}.${dateTokens[0]}.${dateTokens[2]}`,
+          })
+        }
       }
 
       return updated

@@ -4,6 +4,11 @@ declare namespace Store {
 
   type Theme = typeof themeLight | typeof themeDark
 
+  type Banner = {
+    isActive: boolean
+    messageId: string
+  }
+
   type PostPreview = {
     postId: string
     title: string
@@ -37,10 +42,13 @@ declare namespace Store {
 
   interface View {
     theme: Theme
+    banner: Banner
     blog: Blog
     extra: Extra
 
     setTheme: (theme: Store.Theme) => void
+    setActiveBanner: (data: { isActive: boolean; messageId: string }) => void
+
     setTags: (tags: string[]) => void
     setPostsPending: (status: boolean) => void
     setPostPreviews: (previews: PostPreview[]) => void

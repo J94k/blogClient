@@ -4,9 +4,17 @@ import { Outlet } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import config from 'config'
 import icons from 'shared/assets/icons'
-import { AppLayout, StyledOutlet, StyledHeader, StyledMain } from './ui'
 import Header from 'widgets/Header'
 import Footer from 'widgets/Footer'
+import Banner from 'widgets/Banner'
+import {
+  AppLayout,
+  StyledOutlet,
+  StyledBanner,
+  StyledHeader,
+  StyledMain,
+  StyledFooter,
+} from './ui'
 
 const links = [
   { route: '/', name: 'Главная' },
@@ -41,8 +49,16 @@ const App: FC<{ store: Store.View }> = ({ store }) => {
     else html.classList.remove('dark-theme')
   }, [store.theme])
 
+  const banner = store.banner
+
   return (
     <AppLayout>
+      {banner.isActive && banner.messageId && (
+        <StyledBanner>
+          <Banner isVisible={banner.isActive} messageId={banner.messageId} />
+        </StyledBanner>
+      )}
+
       <StyledHeader>
         <Header
           name={config.PROJECT_NAME}
@@ -56,7 +72,9 @@ const App: FC<{ store: Store.View }> = ({ store }) => {
           <Outlet />
         </StyledOutlet>
       </StyledMain>
-      <Footer name={config.PROJECT_NAME} />
+      <StyledFooter>
+        <Footer name={config.PROJECT_NAME} />
+      </StyledFooter>
     </AppLayout>
   )
 }

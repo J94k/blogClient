@@ -1,6 +1,14 @@
 import { FC, useState } from 'react'
 import Modal from 'shared/components/Modal'
-import { StyledWrapper, StyledCopyright, StyledPrivacy, StyledInfo } from './ui'
+import icons from 'shared/assets/icons'
+import {
+  StyledWrapper,
+  StyledCopyright,
+  StyledPrivacy,
+  StyledInfo,
+  StyledHeader,
+  StyledIcon,
+} from './ui'
 
 const currentYear = new Date().getFullYear()
 
@@ -20,9 +28,15 @@ const Footer: FC<Props> = ({ name }) => {
 
   return (
     <StyledWrapper>
-      <StyledCopyright>
-        © {currentYear} {name}
-      </StyledCopyright>
+      <StyledHeader>
+        <StyledIcon>
+          <icons.Rat2 />
+        </StyledIcon>
+        <StyledCopyright>
+          © {currentYear} {name}
+        </StyledCopyright>
+      </StyledHeader>
+
       <StyledPrivacy>
         <StyledInfo onClick={showToS}>Условия обслуживания</StyledInfo>
         <StyledInfo onClick={showPP}>Конфиденциальность</StyledInfo>

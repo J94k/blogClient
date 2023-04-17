@@ -1,15 +1,17 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { log } from 'shared/utils/log'
-import analytics from 'shared/services/analytics'
 import blogService from 'shared/services/blogService'
 import store from './store'
 
-const Bootstrap: FC = () => {
-  useEffect(() => {
-    analytics.track('Initialization is fine', {
-      when: 'Bootstrap process',
-    })
+const borderOfDevErrors = 3
 
+const Bootstrap: FC = () => {
+  const [amountOfErrors, setAmountOfErrors] = useState(0)
+
+  const increaseAmountOfErrors = (n = 1) =>
+    setAmountOfErrors((prevAmount) => (prevAmount += n))
+
+  useEffect(() => {
     const fetchMainData = async () => {
       store.setPostsPending(true)
 
@@ -19,6 +21,7 @@ const Bootstrap: FC = () => {
         store.setPostPreviews(postPreviews)
       } catch (error) {
         log('Error while fetching posts', error)
+        increaseAmountOfErrors()
       }
 
       try {
@@ -27,6 +30,7 @@ const Bootstrap: FC = () => {
         store.setTags(tags)
       } catch (error) {
         log('Error while fetching tags', error)
+        increaseAmountOfErrors()
       }
 
       try {
@@ -35,6 +39,7 @@ const Bootstrap: FC = () => {
         store.setAuthors(authors)
       } catch (error) {
         log('Error while fetching authors', error)
+        increaseAmountOfErrors()
       }
 
       store.setPostsPending(false)
@@ -42,6 +47,15 @@ const Bootstrap: FC = () => {
 
     fetchMainData()
   }, [])
+
+  useEffect(() => {
+    if (amountOfErrors > borderOfDevErrors) {
+      store.setActiveBanner({
+        isActive: true,
+        messageId: 'underConstruction',
+      })
+    }
+  }, [amountOfErrors])
 
   return null
 }

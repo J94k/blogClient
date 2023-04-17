@@ -10,12 +10,12 @@ export const StyledWrapper = styled.div`
 `
 
 export const StyledTitle = styled.h2`
-  color: var(--rc-color-text-1);
+  color: var(--text-bright);
   margin: 0;
 `
 
 export const StyledDescription = styled.p`
-  color: var(--rc-color-secondary-soft);
+  color: var(--text-muted-soft);
   margin: 0;
   padding-top: 12px;
 `

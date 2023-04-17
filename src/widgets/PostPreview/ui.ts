@@ -1,33 +1,39 @@
 import styled from 'styled-components'
 import { VIEWPORT } from 'shared/ui/mixins/viewport'
-import { ButtonContinue } from 'shared/components/Button'
 
 export const StyledPostPreview = styled.section`
   padding: 20px;
   border-radius: 0.6rem;
-  border: 1px solid var(--rc-color-border-2);
-  background-color: var(--rc-color-background-2);
-  transition: 0.1s;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  transition: var(--animation-duration);
 
   &:hover {
-    border-color: var(--rc-color-border-2);
+    border-color: var(--border);
   }
 `
 
 export const StyledTitle = styled.h3`
+  width: fit-content;
   margin: 0;
   font-size: 1.4rem;
+  transition: var(--animation-duration);
 
   @media ${VIEWPORT.MOBILE} {
     font-size: 1.2rem;
+  }
+
+  :hover {
+    cursor: pointer;
+    opacity: 0.5;
   }
 `
 
 export const StyledDescription = styled.p`
   margin: 0;
   padding: 0.7rem 0;
-  font-size: 1.1rem;
-  color: var(--rc-color-secondary-soft);
+  font-size: 1rem;
+  color: var(--text-muted-soft);
 
   @media ${VIEWPORT.MOBILE} {
     font-size: 1rem;
@@ -46,14 +52,23 @@ export const StyledBottom = styled.div`
   }
 `
 
-export const StyledButtonContinue = styled(ButtonContinue)`
-  margin-right: 14px;
-`
-
 export const StyledMetadata = styled.div`
-  color: var(--rc-color-secondary-soft);
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+  opacity: 0.6;
+
+  > *:not(:last-child) {
+    margin-right: 10px;
+  }
 
   @media ${VIEWPORT.MOBILE} {
-    margin-top: 1rem;
+    flex-direction: column;
+
+    .author {
+      margin-bottom: 4px;
+    }
   }
 `

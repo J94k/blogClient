@@ -1,6 +1,7 @@
-node_modules
-dist
-sandworm
+node_modules/
+dist/
+sandworm/
+blogData/
 
 *-lock.yaml
 *lock.json
@@ -8,5 +9,3 @@ logo_*.svg
 favicon.ico
 .env
 .env*
-
-config.json

@@ -13,11 +13,11 @@ export const StyledToggle = styled.button`
   border-radius: 0.3rem;
   border: none;
   background-color: transparent;
-  transition: 0.1s;
+  transition: var(--animation-duration);
 
   &:hover {
     // change icon color
-    --rc-color-secondary-soft: var(--rc-color-link-1);
+    --text-muted-soft: var(--links);
   }
 `
 
@@ -29,10 +29,10 @@ export const StyledSettings = styled.div<{ isVisible: boolean }>`
   display: flex;
   flex-direction: column;
   border-radius: 0.4rem;
-  border: 1px solid var(--rc-color-border-3);
-  box-shadow: 0 0 1rem var(--rc-color-shadow-1);
+  border: 1px solid var(--border);
+  box-shadow: 0 0 1rem var(--color-shadow-1);
   backdrop-filter: blur(2px);
-  background-color: var(--rc-color-background-2-transparent);
+  background-color: var(--background-soft);
 
   ${({ isVisible }) =>
     !isVisible &&

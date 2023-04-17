@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import DateLabel from 'shared/components/DateLabel'
 import TagsBlock from 'shared/components/TagsBlock'
+import { ButtonContinue } from 'shared/components/Button'
 import { msToLocalDate } from 'shared/utils/date'
 import {
   StyledPostPreview,
   StyledTitle,
   StyledBottom,
-  StyledButtonContinue,
   StyledMetadata,
   StyledDescription,
 } from './ui'
@@ -18,6 +18,7 @@ const PostPreview: FC<
 > = ({
   postId,
   title,
+  author,
   description,
   date,
   onContinue,
@@ -25,24 +26,22 @@ const PostPreview: FC<
   maxDescriptionLength = 150,
 }) => {
   const handleContinue = () => onContinue(postId)
-  const localDate = msToLocalDate(date)
+
+  const formatedDate = msToLocalDate(date)
 
   return (
     <StyledPostPreview>
-      <StyledTitle>{title}</StyledTitle>
+      <StyledTitle onClick={handleContinue}>{title}</StyledTitle>
+      <StyledMetadata>
+        <span className="author">Автор: {author}</span>
+        <DateLabel>{formatedDate}</DateLabel>
+      </StyledMetadata>
       <StyledDescription>
         {description.slice(0, maxDescriptionLength + 1)}
         {description.length > maxDescriptionLength ? '...' : null}
       </StyledDescription>
       <StyledBottom>
-        <StyledButtonContinue onClick={handleContinue}>
-          Продолжить
-        </StyledButtonContinue>
-        <StyledMetadata>
-          <div>
-            <DateLabel>{localDate}</DateLabel>
-          </div>
-        </StyledMetadata>
+        <ButtonContinue onClick={handleContinue}>Продолжить</ButtonContinue>
       </StyledBottom>
       <TagsBlock tags={tags} />
     </StyledPostPreview>

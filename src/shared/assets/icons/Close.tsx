@@ -3,7 +3,7 @@ import { FC } from 'react'
 const Close: FC = () => {
   return (
     <svg
-      fill="var(--rc-color-secondary)"
+      fill="var(--text-muted)"
       viewBox="-8.5 0 32 32"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

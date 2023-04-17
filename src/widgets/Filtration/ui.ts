@@ -3,10 +3,8 @@ import styled from 'styled-components'
 export const StyledWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.6rem;
-  border: 1px solid var(--rc-color-border-2);
-  background-color: var(--rc-color-background-2);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
 `
 
 export const StyledItem = styled.div`
@@ -21,8 +19,8 @@ const commonStyles = `
   -moz-appearance: none;
   appearance: none;
   border-radius: 0.4rem;
-  border: 1px solid var(--rc-color-border-3);
-  background-color: var(--rc-color-background-1);
+  border: 1px solid var(--border);
+  background-color: var(--background-body);
   color: inherit;
 `
 

@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const StyledLink = styled.a`
   text-decoration: underline;
-  color: var(--rc-color-link-1);
+  color: var(--links);
 
   &:hover {
-    color: var(--rc-color-link-1-hover);
+    color: var(--links-hover);
   }
 `
 

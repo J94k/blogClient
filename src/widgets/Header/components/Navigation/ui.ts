@@ -7,7 +7,7 @@ export const StyledWrapper = styled.nav`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items; center;
+    align-items: center;
     list-style: none;
   }
 
@@ -32,17 +32,18 @@ export const StyledWrapper = styled.nav`
 
 export const StyledToggle = styled.button`
   min-width: 2.2rem;
+  padding: 0;
   display: none;
   align-items: center;
   justify-content: center;
   border-radius: 0.3rem;
   border: none;
   background-color: transparent;
-  transition: 0.1s;
+  transition: var(--animation-duration);
 
   &:hover {
     // change icon color
-    --rc-color-secondary-soft: var(--rc-color-link-1);
+    --text-muted: var(--links);
   }
 
   @media ${VIEWPORT.MOBILE_MD} {
@@ -66,10 +67,10 @@ export const StyledMenuWrapper = styled.div<{ isOpen: boolean }>`
     border-radius: 0.6rem;
     opacity: 0;
     visibility: hidden;
-    transition: 145ms;
-    box-shadow: 0 0 1rem var(--rc-color-shadow-1);
-    background-color: var(--rc-color-background-2);
-    border: 1px solid var(--rc-color-border-3);
+    transition: var(--animation-duration);
+    box-shadow: 0 0 1rem var(--color-shadow-1);
+    background-color: var(--background);
+    border: 1px solid var(--border);
 
     ${({ isOpen }) =>
       isOpen &&
@@ -83,14 +84,9 @@ export const StyledMenuWrapper = styled.div<{ isOpen: boolean }>`
 
 export const StyledRouteLink = styled.span`
   font-size: 18px;
-  color: var(--rc-color-link-1);
 
   @media ${VIEWPORT.MOBILE_MD} {
     font-size: 22px;
-  }
-
-  :hover {
-    color: var(--rc-color-link-1-hover);
   }
 `
 

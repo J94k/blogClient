@@ -3,6 +3,10 @@ import config from 'config'
 
 const defaultStore: Store.View = {
   theme: window.localStorage.colorScheme || 'light',
+  banner: {
+    isActive: false,
+    messageId: '',
+  },
   blog: {
     isPending: false,
     tags: [],
@@ -17,6 +21,10 @@ const defaultStore: Store.View = {
 
   setTheme(theme) {
     this.theme = theme
+  },
+  setActiveBanner({ isActive, messageId }) {
+    this.banner.isActive = isActive
+    this.banner.messageId = messageId
   },
   setTags(tags) {
     this.blog.tags = tags

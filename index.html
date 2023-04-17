@@ -6,11 +6,11 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#869eff" />
+    <meta name="theme-color" content="#db8a19" />
     <meta name="color-scheme" content="light dark" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline' api.ratcloud.org ratcloud.org api-js.mixpanel.com"
+      content="script-src 'self' 'unsafe-inline' api.ratcloud.org ratcloud.org static.cloudflareinsights.com"
     />
     <title>Ratcloud</title>
     <meta name="description" content="Персональный сайт Ratcloud. Темы: программирование, разработка, психология, новости, книги, саморазвитие.">
@@ -33,7 +33,7 @@
     <meta name="twitter:image" content="/logo.png">
     <style>
       body {
-        background-color: var(--rc-color-background-1);
+        background-color: var(--background-body);
       }
     </style>
     <script>
@@ -51,5 +51,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7fa7252ed7a640dda33653f26b7196b4"}'></script>
   </body>
 </html>

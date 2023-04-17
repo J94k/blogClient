@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'ArgosGeorge';
+  src: local('ArgosGeorge'),
+    url('../../shared/assets/fonts/ArgosGeorge.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Old-Soviet';
+  src: local('Old-Soviet'),
+    url('../../shared/assets/fonts/Old-Soviet.otf') format('opentype');
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--text-bright);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 600;
+}
+
+blockquote,
+q {
+  position: relative;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 30px;
+  margin-inline-end: 40px;
+  font-style: oblique;
+  color: var(--text-muted);
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  position: absolute;
+  font-size: 38px;
+}
+
+blockquote::before,
+q::before {
+  content: '\201C';
+  left: -0.8em;
+  top: -0.2em;
+}
+
+blockquote::after,
+q::after {
+  content: '\201D';
+  right: -0.7em;
+  bottom: -0.4em;
+}
+
+blockquote > footer {
+  font-style: normal;
+  border: 0;
+}
+
+blockquote cite {
+  font-style: normal;
+}
+
+address {
+  font-style: normal;
+}
+
+a[href^='mailto\:']::before {
+  content: '📧 ';
+}
+
+a[href^='tel\:']::before {
+  content: '📞 ';
+}
+
+a[href^='sms\:']::before {
+  content: '💬 ';
+}
+
+mark {
+  background-color: var(--highlight);
+  border-radius: 2px;
+  padding: 0 2px 0 2px;
+  color: #000;
+}
+
+a > code,
+a > strong {
+  color: inherit;
+}

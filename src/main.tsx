@@ -1,5 +1,4 @@
 import 'shared/services/localMetrics'
-import 'shared/services/analytics'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
