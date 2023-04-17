@@ -5,6 +5,7 @@ export const StyledAccordion = styled.div<{ isActive: boolean }>`
   flex-direction: column;
   border: 1px solid var(--border);
   border-radius: 10px;
+  background-color: var(--background);
 
   ${({ isActive }) =>
     isActive &&
@@ -24,7 +25,6 @@ export const StyledButton = styled.button<{ isActive: boolean }>`
   background-color: transparent;
   border-radius: inherit;
   border: 2px solid transparent;
-  background-color: var(--background-body);
   transition: var(--animation-duration);
 
   :hover {

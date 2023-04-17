@@ -32,6 +32,7 @@ export const StyledWrapper = styled.nav`
 
 export const StyledToggle = styled.button`
   min-width: 2.2rem;
+  padding: 0;
   display: none;
   align-items: center;
   justify-content: center;
@@ -42,7 +43,7 @@ export const StyledToggle = styled.button`
 
   &:hover {
     // change icon color
-    --text-muted-soft: var(--links);
+    --text-muted: var(--links);
   }
 
   @media ${VIEWPORT.MOBILE_MD} {
