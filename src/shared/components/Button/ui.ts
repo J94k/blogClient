@@ -1,19 +1,18 @@
 import styled, { css } from 'styled-components'
 
 export const StyledButton = styled.button`
-  padding: 0.5rem 0.8rem;
-  border: 2px solid var(--border);
-  border-radius: 0.3rem;
-  color: var(--rc-color-button-text-3);
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
   background-color: transparent;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.4px;
   transition: var(--animation-duration);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color: var(--brand-soft);
-    border-color: var(--brand-soft);
-    box-shadow: 0 4px 8px var(--color-shadow-1);
+    color: var(--text-bright);
+    background-color: var(--brand-soft);
+    border-color: var(--brand);
   }
 `
 
@@ -32,10 +31,11 @@ export const StyledButtonContinue = styled(StyledButton)`
     border-top: 2px solid;
     border-right: 2px solid;
     border-color: var(--border);
+    transition: inherit;
   }
 
   &:hover::after {
-    border-color: var(--brand-soft);
+    border-color: var(--text-bright);
   }
 `
 
@@ -56,10 +56,11 @@ export const StyledButtonArrow = styled(StyledButton)<{
     border-top: 2px solid;
     border-right: 2px solid;
     border-color: var(--border);
+    transition: inherit;
   }
 
   &:hover::after {
-    border-color: var(--brand-soft);
+    border-color: var(--text-bright);
   }
 
   ${({ direction }) => {

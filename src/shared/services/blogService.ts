@@ -1,4 +1,44 @@
 import config from 'config'
+import authors from '../../blogData/authors.json'
+import blog from '../../blogData/blog.json'
+
+// @todo fix server side
+const isLocal = true
+
+const fetchLocalAllPostPreviews = async (): Promise<unknown> => {
+  let allPostPreviews: Record<string, unknown> = {}
+
+  Object.values(authors).forEach(({ postPreviews }) => {
+    allPostPreviews = { ...allPostPreviews, ...postPreviews }
+  })
+
+  return Object.values(allPostPreviews)
+}
+
+const fetchLocalPost = async (id: string): Promise<string> => {
+  return await fetch(`blogData/posts/${id}.md`).then((response) =>
+    response.text()
+  )
+}
+
+const fetchLocalAuthors = async (): Promise<Store.Author[]> => {
+  const result: Record<string, unknown>[] = []
+
+  Object.keys(authors).forEach((nickname) => {
+    result.push({
+      nickname,
+      story: authors[nickname as keyof typeof authors].story,
+    })
+  })
+
+  return result as Store.Author[]
+}
+
+const fetchLocalTags = async (): Promise<string[]> => {
+  return blog.tags
+}
+
+// ============
 
 const fetchAllPostPreviews = async (): Promise<unknown> => {
   const previews = await fetch(`${config.BLOG_SERVICE_URL}/postPreviews`, {
@@ -17,11 +57,11 @@ const fetchPost = async (id: string): Promise<string> => {
 }
 
 const fetchAuthors = async (): Promise<Store.Author[]> => {
-  const authors = await fetch(`${config.BLOG_SERVICE_URL}/authors`, {
+  const result = await fetch(`${config.BLOG_SERVICE_URL}/authors`, {
     method: 'GET',
   }).then((res) => res.json())
 
-  return authors as Store.Author[]
+  return result as Store.Author[]
 }
 
 const fetchTags = async (): Promise<string[]> => {
@@ -32,9 +72,18 @@ const fetchTags = async (): Promise<string[]> => {
   return tags as string[]
 }
 
-export default {
+const serverService = {
   fetchAllPostPreviews,
   fetchPost,
   fetchAuthors,
   fetchTags,
 }
+
+const localService = {
+  fetchAllPostPreviews: fetchLocalAllPostPreviews,
+  fetchPost: fetchLocalPost,
+  fetchAuthors: fetchLocalAuthors,
+  fetchTags: fetchLocalTags,
+}
+
+export default isLocal ? localService : serverService

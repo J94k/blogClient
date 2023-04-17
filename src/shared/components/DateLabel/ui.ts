@@ -1,3 +1,3 @@
 import styled from 'styled-components'
 
-export const StyledDateLabel = styled.i``
+export const StyledDateLabel = styled.span``

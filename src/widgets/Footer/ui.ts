@@ -11,23 +11,6 @@ export const StyledWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   color: var(--text-muted-soft);
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.2rem;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--brand-soft) 22%,
-      var(--brand) 50%,
-      var(--brand-soft) 78%,
-      transparent
-    );
-  }
 `
 
 export const StyledHeader = styled.div`

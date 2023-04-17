@@ -12,6 +12,7 @@
     "format:prettier": "prettier -w package.json vite.config* .eslintrc* tsconfig* .prettierrc* ./src"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
     "dompurify": "^3.0.1",
     "localforage": "^1.10.0",
     "marked": "^4.2.12",

@@ -8,4 +8,8 @@ export const StyledSocialBlock = styled.div`
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
+
+  a {
+    width: fit-content;
+  }
 `

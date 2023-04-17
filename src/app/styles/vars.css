@@ -5,7 +5,7 @@
   --background: #f9f9f9;
   --background-soft: rgba(249, 249, 249, 0.9);
   --background-alt: #f7f7f7;
-  --selection: #9e9e9e;
+  --selection: rgb(228, 159, 86);
   --text-main: #363636;
   --text-bright: #090b0e;
   --text-muted: rgba(0, 0, 0, 0.72);
@@ -24,6 +24,9 @@
   --form-text: #1d1d1d;
   --variable: #39a33c;
   --highlight: #ff0;
+  --warning: rgb(195, 180, 64);
+  --warning-soft: rgba(195, 180, 64, 0.1);
+  --error: rgb(230, 84, 84);
   --color-shadow-1: #e5e5e6;
   --select-arrow: svg-load(
     '../shared/assets/images/selectArrow.svg',
@@ -38,10 +41,9 @@
   --background: #1f1f22;
   --background-soft: rgba(31, 31, 34, 0.9);
   --background-alt: #1a242f;
-  --selection: #1c76c5;
+  --selection: rgb(128, 71, 11);
   --text-main: #dbdbdb;
   --text-bright: #f6f6f6;
-  --text-muted: #a9b1ba;
   --text-muted: rgba(255, 255, 255, 0.72);
   --text-muted-soft: rgba(255, 255, 255, 0.6);
   --links: #db8a19;
@@ -58,6 +60,9 @@
   --form-text: #fff;
   --variable: #d941e2;
   --highlight: #efdb43;
+  --warning: rgb(195, 180, 64);
+  --warning-soft: rgba(195, 180, 64, 0.1);
+  --error: rgb(230, 84, 84);
   --color-shadow-1: #0c0e12;
   --select-arrow: svg-load(
     '../shared/assets/images/selectArrow.svg',
